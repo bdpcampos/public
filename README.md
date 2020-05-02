@@ -1,3 +1,3 @@
 # public
- My public repository! :D :D :D
+ My public repository! :D
  
