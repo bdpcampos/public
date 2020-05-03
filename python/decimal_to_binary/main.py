@@ -33,9 +33,11 @@ if choice == 2:
         binary = input("Type a valid binary number to be converted into a decimal number: ")
         for i in binary:
             x = int(i)
-            stack.stack_up(x)
             if x < 0 or x > 1:
                 check = 0
+                continue
+            stack.stack_up(x)
+
 
     t = stack.positions()
 
