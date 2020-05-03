@@ -35,7 +35,7 @@ if choice == 2:
             x = int(i)
             if x < 0 or x > 1:
                 check = 0
-                continue
+                break
             stack.stack_up(x)
 
 
