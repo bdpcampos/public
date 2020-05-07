@@ -17,6 +17,8 @@ while r != 0:
 
     while escolha not in [1, 2, 3]:
         escolha = int(input())
+        if escolha not in [1, 2, 3]:
+            print('Escolha um número correto!')
 
     escolha_pc = random.randint(1,3)
 
