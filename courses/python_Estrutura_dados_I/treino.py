@@ -1,0 +1,2 @@
+print(hash("Bruno121"))
+

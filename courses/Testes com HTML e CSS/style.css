@@ -1,0 +1,93 @@
+div {
+    padding: 5px;
+    margin: 5px auto 5px auto;
+}
+
+form#form1 {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+fieldset {
+    border: 3px solid #575757;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin-top: 1%;
+    background-color: #efeff7;
+}
+
+form#form1 label {
+    position: relative;
+    margin: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+form#form1 input {
+    position: relative;
+    margin: 5px;
+    border: 2px solid #606060;
+    height: 15px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+form#form1 select {
+    position: relative;
+    margin: 5px;
+    border: 2px solid #606060;
+    height: 25px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    width: 150px;
+}
+
+form#form1 textarea {
+    position: relative;
+    margin: 5px;
+    border: 2px solid #606060;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+form#form1 input:hover {
+    background-color: #bdbdbd;
+
+}
+
+form#form1 input#tBotao {
+    height: 40px;
+    width: 100px;
+    font-size: 15pt;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+form#form1 input#tBotao:hover {
+    background-color: rgb(34, 106, 173);
+}
+
+form#form1 input#tBotao:active {
+    background-color: rgb(218, 160, 84);
+}
+
+form#form1 legend {
+    font-weight: bolder;
+    font-size: 14pt;
+    color: #575757;
+}
+
+form#form1 input#tNome {
+    margin-left: 5%;
+}
+
+form#form1 input#tMail {
+    margin-left: 19.5%;
+}
+
+form#form1 input#tArquivo {
+    height: 20px;
+    width: 300px;
+    font-size: 10pt;
+    background-color: white;
+
+
+}

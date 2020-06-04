@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento com formularios</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body onload="multiplica();">
+
+    <form method="POST" action="http://arquivo.devmedia.com.br/projeto/requisicao.php" id="form1">
+
+        <fieldset id ="dadosPessoais">
+            <legend>Dados para cadastro</legend>
+            <div>
+                <label for="tNome">Nome completo</label>
+                <input type="text" id="tNome" name="cNome"  placeholder="Digite seu nome completo" size="38" minlength="5" maxlength="50" required>
+            </div>
+            <div>
+                <label for="tMail">E-mail</label>
+                <input type="email" id="tMail" name="cMail" placeholder="Digite seu e-mail" size="38" required minlength="5" maxlength="250">
+            </div>
+            <div>
+                <label for="tSenha">Senha</label>
+                <input type="password" id="tSenha" name="cSenha" size="20" minlength="8" maxlength="20" placeholder="De 8 a 20 caracteres">
+            </div>
+            <div>
+                <label for="tFone">Telefone</label>
+                <input type="tel" id="tFone" name="cFone" size="15" minlength="14" maxlength="14" required placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}">
+            </div>
+            <div>
+                <label for="tData">Data</label>
+                <input type="date" id="tData" name="cData">
+            </div>
+            <div>
+                <label>Escolha uma opção</label>
+                <input type="radio" id="tOp1" name="cOpcao" value="Opcao1" checked>
+                <label for="tOp1">Opção 1</label>
+                <input type="radio" id="tOp2" name="cOpcao" value="Opcao2">
+                <label for="tOp2">Opção 2</label>
+            </div>
+            <div>
+                <label for="tEstado">Estado</label>
+                <select name="cEstado" id="tEstado">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PR">Paraná</option>
+                    <option value="SP" selected>São Paulo</option>
+                    <option value="BA">Bahia</option>
+                </select>
+            </div>
+            <div>
+                <label for="tArea">Escreve ai...</label>
+                <textarea name="cArea" id="tArea" cols="60" rows="6" maxlength="256" placeholder="Máximo de 256 caracteres" style="resize: none;"></textarea>
+            </div>
+            <div>
+                <label for="tCheck">Quer receber ofertas por e-mail?</label>
+                <input type="checkbox" name="cCheck" id="tCheck" checked>
+            </div>
+        </fieldset>     
+
+        <fieldset id="enviaArquivo">
+            <legend>Envie sua foto</legend>
+            <div>
+                <label for="tArquivo">Foto:</label>
+                <input type="file" name="cArquivo" id="tArquivo" accept="image/*">
+            </div>
+        </fieldset>
+
+        <fieldset id="JSTeste">  
+            <legend>JS Teste</legend>
+            <div>
+                <label for="tNumero1">Número (de 1 a 10)</label>
+                <input type="number" id="tNumero1" name="cNumero1" value="10" min="1" max="10" oninput="multiplica();">
+            </div>
+            <div>
+                <label for="tNumero2">Outro número (de 1 a 10)</label>
+                <input type="number" id="tNumero2" name="cNumero2" value="10" min="1" max="10" oninput="multiplica();">
+            </div>
+            <div>
+                <label for="tResult">A multiplicação dos números é</label>
+                <input type="text" id="tResult" name="cResult" size="6" readonly>
+            </div>
+        </fieldset>
+
+        <div>
+            <input type="submit" value="Enviar" id='tBotao'>
+            <input type="reset" value="Apagar" id="tBotao">
+        </div>
+
+    </form>
+
+</body>
+
+</html>
