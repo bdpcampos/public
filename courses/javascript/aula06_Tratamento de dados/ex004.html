@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="" id="form1">
+
+        <fieldset id="dados">
+            <div>
+                <label for="tnome">Digite seu nome</label>
+                <input type="text" id="tnome" name="cnome" size="38" minlength="5" maxlength="50" required>
+            </div>
+            <div>
+                <input type="submit" value="OK" id="botao" onclick="nomear()">
+            </div>
+        </fieldset>
+
+    </form>
+
+
+    <script>
+        function nomear() {
+            var nome = document.getElementById('tnome').value
+            document.write(`Seu nome tem ${nome.length} letras.<br/>`)
+            document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}.<br/>`)
+            document.write(`Seu nome em minusculas é ${nome.toLowerCase()}.`)
+        }
+    </script>
+</body>
+</html>
