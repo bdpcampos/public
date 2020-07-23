@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Iniciando os estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p id="p1">Aprendendo a usar o <strong>DOM</strong> com JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+
+
+    <script>
+
+        var p1 = window.document.getElementsByTagName('p')[0] //Seleciona o primeiro caso de 'p'
+        window.document.write(p1.innerText + ' <-- colocado usando script')
+
+        p1.style.color = 'blue' //Mudando o CSS com script
+
+        var corpo = window.document.body //Guarda o objeto numa variável
+
+        corpo.style.background = 'black' //Usa a variavel
+
+        var d = document.getElementById('msg')
+        d.style.background = 'green'
+        //d.innerText = 'Estou aguardando'
+
+        //UTILIZANDO SELECTOR >> RECOMENDADO
+
+        var d = document.querySelector('div#msg')
+        d.style.color = 'orange'
+
+        document.querySelector('p#p1').style.color = 'green' //melhor forma de usar!
+
+    </script>
+
+
+</body>
+
+</html>
