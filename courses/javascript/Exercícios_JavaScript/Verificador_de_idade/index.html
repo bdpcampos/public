@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora do dia</title>
+    <title>Veridicador de Idade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Hora do Dia</h1>
+        <h1>Veridicador de Idade</h1>
     </header>
     <section>
-        <div>
-            Testando
-        </div>
-        <div>
-            Testando2
+        <fieldset id="form">
+            <div>
+                <label for="tanoNascimento">Ano de Nascimento: </label>
+                <input type="number" name="tanoNascimento" id="tanoNascimento" placeholder="1990..." required>
+            </div>
+            <div>
+                <label for="tSexo">Sexo: </label>
+                <input type="radio" name="tsexoOp" id="tsexoM">
+                <label for="tsexoM">Masculino</label>
+                <input type="radio" name="tsexoOp" id="tsexoF">
+                <label for="tsexoF">Feminino</label>
+            </div>
+            <div>
+                <input type="submit" value="Verificar" id="tbotao" onclick="verificar()">
+            </div>
+        </fieldset>
+        <div id="imagem">
+           <p>Preencha os dados acima para ver o resultado!</p>
         </div>
     </section>
     <footer>

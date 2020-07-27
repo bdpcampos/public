@@ -22,3 +22,15 @@ footer{
     text-align: center;
     font-style: italic;
 }
+
+fieldset#form {
+    border: transparent;
+}
+
+div {
+    padding: 10px;
+}
+
+div#imagem {
+    text-align: center;
+}
