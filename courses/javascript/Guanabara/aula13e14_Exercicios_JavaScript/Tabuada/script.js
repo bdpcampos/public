@@ -6,6 +6,7 @@ function gerarTabuada() {
     
     if (num === 0) {
         alert("Por favor digite um número")
+        return
     }
 
     area.innerHTML = ""
