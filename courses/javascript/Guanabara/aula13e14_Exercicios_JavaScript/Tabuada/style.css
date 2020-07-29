@@ -23,10 +23,19 @@ footer{
     font-style: italic;
 }
 
-fieldset#form {
+fieldset {
     border: transparent;
 }
 
 div {
     padding: 10px;
 }
+
+div#txtarea {
+    text-align: center;
+    line-height: 2;
+    border-width: 2px;
+    border-style: dotted;
+    border-color: black;
+}
+
