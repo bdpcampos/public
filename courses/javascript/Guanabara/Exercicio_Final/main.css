@@ -35,15 +35,7 @@ div {
     padding: 10px;
 }
 
-p#p1 {
-    display: inline;
-}
-
-p#p2 {
-    display: inline;
-}
-
-p#p3 {
+p#p1,#p2,#p3 {
     display: inline;
 }
 

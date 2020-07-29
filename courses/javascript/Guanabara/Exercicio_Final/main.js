@@ -1,9 +1,8 @@
 
 let numeros = []
-let input = document.getElementById('tNumero')
+let input = document.getElementById("tNumero")
 let display = document.getElementById('p2')
 let res = document.getElementById('div_res')
-let vInput = Number(input.value)
 
 
 function isEmpty(array){
@@ -12,6 +11,7 @@ function isEmpty(array){
 
 
 function adicionar() {
+    let vInput = Number(input.value)
     if (numeros.indexOf(vInput) !== -1) {
         alert ('Não é aceito números repetidos')
         return
@@ -21,9 +21,9 @@ function adicionar() {
 }   else {
         res.innerHTML = ''
         if (isEmpty(numeros)) {
-            display.innerHTML += `${vInput} `
+            display.innerHTML += `${vInput}`
         } else {
-            display.innerHTML += `,${vInput} `
+            display.innerHTML += `, ${vInput}`
         }
         numeros.push(vInput)
         }

@@ -12,7 +12,7 @@ function gerarTabuada() {
     area.innerHTML = ""
 
     for (let x = 0; x <= 10; x++) {
-        area.innerHTML += `${num} X ${x} = ${num * x}<br>`
+        area.innerHTML += `<p>${num} X ${x} = ${num * x}</p>`
     }
 
 }
