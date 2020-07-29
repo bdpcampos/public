@@ -1,0 +1,61 @@
+header {
+    text-align: center;
+    color: white;
+}
+
+
+body {
+    font: normal 15pt Arial;
+    background-color: rgb(70,142,236);
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 58%;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+}
+
+fieldset {
+    border: transparent;   
+    text-align: center;
+}
+
+input#tNumero {
+    width: 80px;
+    text-align: center;
+    font-size: 12pt;
+    margin: 5px;
+}
+
+div {
+    text-align: center;
+    padding: 10px;
+}
+
+p#p1 {
+    display: inline;
+}
+
+p#p2 {
+    display: inline;
+}
+
+p#p3 {
+    display: inline;
+}
+
+button {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin: 5px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
