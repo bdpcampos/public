@@ -26,6 +26,8 @@ function adicionar() {
             display.innerHTML += `, ${vInput}`
         }
         numeros.push(vInput)
+        input.value = ''  //limpa o valor do input após a incerssão de dados
+        input.focus()  //volta o foco (cursor) para o input
         }
 }
 
@@ -37,8 +39,8 @@ function finalizar() {
     }
 
     let nCadastrados = 0
-    let nMaior = 0
-    let nMenor = 100
+    let nMaior = numeros[0]
+    let nMenor = numeros[0]
     let nSoma = 0
 
     for (let item in numeros) {

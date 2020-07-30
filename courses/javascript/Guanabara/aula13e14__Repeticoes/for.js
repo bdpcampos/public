@@ -7,7 +7,7 @@ for (let contador = 0; contador < 10; contador ++) {
 console.log('----------------------------------')
 //
 
-//PORRA TEM O FOR IGUAL NO PYTHON PORRA!!!!! -->
+//PORRA TEM O FOR IGUAL NO PYTHON PORRA!!!!! mas ele retorna o indice e não o elemento-->
 
 
 let testeArray = []
