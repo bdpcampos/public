@@ -1,0 +1,76 @@
+.classTeste {
+    color: red;
+    font: normal 20pt Arial;
+}
+
+#idTeste {
+    color: blue;
+    font: normal 25pt Arial;
+}
+
+/*
+Lembre-se que um id só pode pertencer a um único elemento HTML e o uso de classes são para selecionarmos um grupo de elementos.
+
+---Usar classe ou id?
+O seletor de classe deve ser usado quando muitos elementos compartilham do estilo definido na regra. Por exemplo, se queremos alterar todos os parágrafos em uma página utilizamos o seletor de classe.
+
+O seletor de id deve ser utilizado quando apenas um elemento deve receber o estilo definido na regra. Dessa forma, o elemento terá um estilo único na página e geralmente ele não se repete nela. Por exemplo, o menu lateral de um site, o avatar do usuário na barra de navegação ou o rodapé são candidatos a serem selecionados por ids e não classes, dada sua singularidade na página.
+
+Portanto, lembre-se de usar id se o elemento não se repete na página. Em outro caso, use o seletor de classe.
+
+---Agrupamentos por classes
+
+.classeUm.classeDois {
+    color: black;
+}
+
+
+---Agrupamento por descendência de classes
+
+.classePai .classeFilha {
+        color: black;
+}
+
+*/
+
+
+
+h1, h2, h3 {
+    color: rgb(14, 224, 25);
+}
+
+p {
+    color: brown;
+    font: normal 12pt Arial;
+}
+
+div p {
+    color: coral;
+    font: normal 15pt Arial;
+}
+
+/*
+considere o cenário a seguir:
+
+p { color: blue; }
+p { color: red; }
+
+Neste caso, a cor final do elemento será vermelha, pois o valor atribuído à propriedade color na declaração da segunda regra sobrescreve o valor da primeira. Isso acontece porque o CSS leva em consideração a ordem na qual as regras foram declaradas no código.
+
+Outros fatores também são levados em consideração quando é necessário definir qual será a aparência de um elemento ao qual diferentes estilos foram atribuídos. Em alguns casos, um cálculo pode ser feito para simular esse critério, levando em consideração o seletor utilizado.
+
+Se foi utilizado o seletor de tipo a regra recebe peso 1.
+Se foi utilizado o seletor de classe ou atributo a regra recebe peso 10.
+Se foi utilizado o seletor de id a regra recebe peso 100.
+Combinadores não influenciam nessa decisão.
+
+Levando em consideração esse cálculo, considere o seguinte trecho de código:
+
+
+ .classe { color: blue; }
+ #identificador { color: red;  }
+
+
+Neste caso a cor do parágrafo será vermelho, pois o peso da regra que utiliza o seletor de classe é menor em comparação aquela que utiliza o seletor de id.
+
+*/
