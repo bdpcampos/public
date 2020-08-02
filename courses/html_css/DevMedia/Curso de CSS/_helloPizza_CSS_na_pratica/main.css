@@ -1,0 +1,102 @@
+body {
+    background-color: #060606;
+    background-image: url(_images/background-pizza.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+}
+
+#banner {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 76px;
+    padding: 30px 70px 30px 70px;
+}
+
+#banner h1 {
+    float: left;
+    margin: 0px;
+}
+
+#banner nav {
+    float: right;
+    position: relative;
+    top: 30px;
+}
+
+/*descendent selector*/
+
+#banner nav ul{
+    margin: 0px;
+}
+
+#banner nav ul li {
+    display: inline-block;
+    width: 100px;
+}
+
+#banner nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: bold 14px Helvetica;
+}
+
+
+#sabores-pizzas {
+    padding-top: 400px;
+    padding-bottom: 60px;
+}
+
+#sabores-pizzas h2 {
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 6; /* Para dar espaçamento entre paragrafos e outros elementos da página, o recomendado é usar a propriedade do paragrafo line-height, que é o espaçamento entre os parágrafos.*/
+    text-shadow: 2px -2px 10px #060606;
+}
+
+#sabores-pizzas table {
+    margin: 0px auto 0px auto;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #2a2a2a;
+}
+
+#sabores-pizzas td, #sabores-pizzas th {
+    border: 1px #000 solid;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 25px;
+}
+
+#sabores-pizzas .texto-negativo {
+    color: #fb3958;
+}
+
+#sabores-pizzas .texto-positivo {
+    color: #87b50f;
+}
+
+
+#copyright {
+    padding: 35px 0 10px 0;
+    background-color: #060606;
+}
+
+#copyright a {
+    text-align: center;
+    display: block;  /* essa propriedade faz com que o elemento tome todo o espaço da linha na visualização. Assim todos os elemento que estão abaixo serão "empurrados" para baixo. O elemento a vem como "inline" como padrão, ai precisamos mudar. Já a tag p vem como "block" por padrão*/
+}
+
+#copyright p {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}

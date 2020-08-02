@@ -5,99 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Pizza</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <header>
-        <h1>Hello Pizza</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#idContato">Contato</a></li>
-            </ul>
-        </nav>
+        <div id="banner">
+            <h1>
+                <img src="_images/logo-helloPizza.png" alt="Hello Pizza">
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#sabores-pizzas">Sabores</a></li>
+                    <li><a href="#copyright">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section>
-            <h2>Conheça nossos diferenciais!</h2>
-            <ul>
-                <li>Qualidade</li>
-                <li>Sabor</li>
-                <li>Praticidade</li>
-                <li>Agilidade</li>
-            </ul>
-        </section>
+            <div id="sabores-pizzas">
+                <h2>Conheça os nossos sabores exclusivos de pizza</h2>
 
-        <section>
-            <h2>Sabores</h2>
-            <p>Conheça os nossos <strong>6 sabores</strong> de pizza!</p>
-            <figure>
-                <img src="_images/Imagem01.jpg" alt="Fotos dos sabores das pizzas">
-            </figure>
-            <table>
-                <tr>
-                    <th>Sabor</th>
-                    <th>Queijo e Molho</th>
-                    <th>Salada</th>
-                    <th>Carne</th>
-                    <th>Azeitona/Champignon</th>
-                </tr>
-                <tr>
-                    <td>Mozzarella</td>
-                    <td>Sim</td>
-                    <td>Não</td>
-                    <td>Não</td>
-                    <td>Não</td>
-                </tr>
-                <tr>
-                    <td>Calabresa</td>
-                    <td>Sim</td>
-                    <td>Não</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Pepperoni</td>
-                    <td>Sim</td>
-                    <td>Não</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Marguerita</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Portuguesa</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                    <td>Sim</td>
-                <tr>
-                    <td>Alho</td>
-                    <td>Sim</td>
-                    <td>Não</td>
-                    <td>Não</td>
-                    <td>Não</td>
-                </tr>
-                </tr>
-            </table>
-        </section>
-
-        <section>
-            <h2 id="idContato">Contato</h2>
-
+                <table>
+                    <tr>
+                        <th>Pizzas</th>
+                        <th>Queijo e Molho</th>
+                        <th>Salada</th>
+                        <th>Carne</th>
+                        <th>Azeitona/Champignon</th>
+                    </tr>
+                    <tr>
+                        <td>Mozzarella</td>
+                        <td rowspan="6" class="texto-positivo">Sim</td>
+                        <td class="texto-negativo">Não</td>
+                        <td class="texto-negativo">Não</td>
+                        <td class="texto-negativo">Não</td>
+                    </tr>
+                    <tr>
+                        <td>Calabresa</td>
+                        <td class="texto-negativo">Não</td>
+                        <td class="texto-positivo">Sim</td>
+                        <td class="texto-positivo">Sim</td>
+                    </tr>
+                    <tr>
+                        <td>Pepperoni</td>
+                        <td class="texto-negativo">Não</td>
+                        <td class="texto-positivo">Sim</td>
+                        <td class="texto-positivo">Sim</td>
+                    </tr>
+                    <tr>
+                        <td>Marguerita</td>
+                        <td class="texto-positivo">Sim</td>
+                        <td class="texto-positivo">Sim</td>
+                        <td class="texto-positivo">Sim</td>
+                    </tr>
+                    <tr>
+                        <td>Portuguesa</td>
+                        <td class="texto-positivo">Sim</td>
+                        <td class="texto-positivo">Sim</td>
+                        <td class="texto-positivo">Sim</td>
+                    <tr>
+                        <td>Alho</td>
+                        <td class="texto-negativo">Não</td>
+                        <td class="texto-negativo">Não</td>
+                        <td class="texto-negativo">Não</td>
+                    </tr>
+                    </tr>
+                </table>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Hello Pizza</p>
+        <div id="copyright">
+            <a href="#banner" id="logo-hellopizza">
+                <img src="_images/logo-helloPizza.png" alt="Hello Pizza">
+            </a>
+            <p>Todos os direitos reservados &copy; 2020</p>
+        </div>
     </footer>
+
 </body>
 
 </html>
