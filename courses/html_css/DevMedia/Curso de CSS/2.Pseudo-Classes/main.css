@@ -1,0 +1,91 @@
+p {
+    font: 14pt Arial;
+}
+
+tr {
+    font: 14pt Arial;
+    
+}
+
+div {
+    font: 14pt Arial;
+    margin-top: 40px;
+    padding: 10px;
+
+}
+
+
+/*
+
+Pseudo classes são classes baseados em um estado do próprio elemento.
+
+Quero destacar apenas o primeiro parágrafo e, ao invés de criar uma classe no html, crio uma pseudo classe, baseada no estado deste paragrafo no CSS, dentro de um container:
+
+*/
+
+p:first-of-type {
+    font: italic 14pt Arial;
+    color: blue;
+}
+
+p:last-of-type {
+    font: bold 14pt Arial;
+    color: rgb(231, 93, 50);
+}
+
+tr:nth-last-child(3) {
+    font: bold 14pt Arial;
+    color: rgb(82, 202, 13);
+}
+
+tr:nth-last-child(even) {
+    font: bold 14pt Arial;
+    color: rgb(202, 104, 13);
+}
+
+tr:nth-child(even) {
+    font: italic 14pt Arial;
+}
+
+/*
+
+nth-of-type usa uma formula ( a * n + 1 ) para definir em qual item vai fazer efeito. Muito usada para fazer o efeito zebrado em tabelas. Usando 2n+1 ele sempre pula um item.
+
+*/
+
+p:nth-of-type(2n+1) {
+    background-color: rgb(192, 190, 190);
+}
+
+
+tr:nth-of-type(2n+1) {
+    background-color: rgb(192, 190, 190);
+}
+
+/*
+
+Usando propriedades do item para criar uma pseudo-classe e fazer um comportamento padrão.
+
+*/
+
+input:disabled {
+    background: #eee;
+    border: 1px solid #222;
+    cursor: not-allowed;
+}
+
+
+input:checked + label {
+    color: green;
+    background: greenyellow;
+}
+
+/*
+
+Usando o que não tem uma propriedadeespecífica do item para criar uma pseudo-classe e fazer um comportamento padrão.
+
+*/
+
+input:not(:disabled) {
+    border: 2px solid green;
+}

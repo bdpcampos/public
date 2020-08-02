@@ -1,0 +1,108 @@
+body {
+    font: normal 12pt Arial;
+    line-height: 1.5;
+}
+
+p {
+    margin-top: 30px;
+}
+
+/*
+Todos os pseudo-elementos do CSS: 
+
+::first-line
+::first-letter
+::before
+::after
+::selection.
+
+*/
+
+/*
+-----Sintaxe
+Para utilizar um pseudo-elemento basta declarar o seletor seguido pelo pseudo-elemento desejado. Logo após, da mesma forma que é feito com qualquer regra CSS, podemos definir as propriedades a ele relacionadas.
+
+Sintaxe de declaração de um pseudo-elemento:
+
+[seletor]::pseudo-elemento { propriedade : valor; }
+
+*/
+
+
+/*
+-----::first-line
+
+O pseudo-elemento ::first-line é utilizado quando desejamos customizar o conteúdo apresentado na primeira linha de um elemento. Assim, podemos estilizar esse fragmento de texto de forma independente, aplicando, por exemplo, um tamanho de fonte diferente.
+
+Respeita o ajuste da tela!!!
+
+Nota: É importante ressaltar que não há uma maneira trivial de definir até onde o texto será estilizado, principalmente quando lidamos com páginas responsivas. Ao redimensionar uma página, a primeira linha pode se tornar maior ou menor, e isso também depende de outros fatores, como o tamanho da fonte, espaçamento entre palavras, entre outros.
+
+*/
+
+
+#p1::first-line {
+    font: bold 14pt Arial;
+}
+
+
+/*
+-----::first-letter
+O pseudo-elemento ::first-letter nos permite selecionar a primeira letra do conteúdo de um elemento. Usamos esse recurso quando desejamos destacar essa letra alterando seu tamanho e sua cor, por exemplo.
+
+Em alguns casos esse recurso pode identificar que algum caractere deve ser selecionado junto com a primeira letra, como quando temos aspas no início do texto.
+
+Quando isso acontece, tanto as aspas duplas quanto a primeira letra serão selecionadas e estilizadas. Essa característica se deve ao fato de ::first-letter tentar se adequar às particularidades da escrita de cada idioma.
+
+*/
+
+#p2::first-letter {
+    color: red;
+    font: bold 16pt Arial;
+}
+
+
+/*
+-----::before
+
+A declaração do pseudo-elemento ::before em um seletor cria um falso elemento que nos permite adicionar conteúdo antes do conteúdo do elemento selecionado.
+
+Nesse exemplo o texto “pseudo-elemento ::before” será apresentado antes do conteúdo “Texto dentro do elemento” e na cor azul. Para isso declaramos as propriedades content e color como regras do pseudo-elemento.
+
+*/
+
+#p3::before {
+    content: "Mãe tô na Globo!!!";
+    color: blue;
+}
+
+
+/*
+-----::after
+
+Assim como ::before, o pseudo-elemento ::after também cria um falso elemento que nos permite adicionar conteúdo ao elemento selecionado, mas desta vez no final dele.
+
+Nesse exemplo usamos o ::after para acrescentar uma frase após o conteúdo já presente no elemento.
+
+*/
+
+#p4::after {
+    content: "Vou me chegando já!!!";
+    color: blue;
+}
+
+
+/*
+-----::selection
+
+O pseudo-elemento ::selection é utilizado para selecionar o conteúdo de um elemento e, a partir disso, customizar algumas propriedades dessa área, como a cor de fundo e do texto.
+
+Nesse caso, todo texto declarado nos elementos <p> de uma página HTML terá a cor vermelha.
+
+Nota: É importante ressaltar que apenas um pequeno conjunto de propriedades do CSS pode ser utilizado com esse pseudo-elemento. Entre essas propriedades podemos destacar: color, background-color, cursor e text-decoration. Em alguns navegadores ainda podemos utilizar: outline e text-shadow. Quando uma propriedade não puder ser renderizada ela será ignorada.
+
+*/
+
+#p5::selection {
+    color: red;
+}

@@ -1,0 +1,49 @@
+p {
+    font: normal 12pt Arial;
+    line-height: 1.5em;
+    margin-top: 20px;
+}
+
+
+#p1 {
+    /*font-weight: 700;  normal = 400 e bold = 700  */
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(18, 26, 143); 
+    font-size: 20px;
+    /*Ao utilizar um número como valor de font-size devemos informar em que unidade do CSS ele está. A unidade de medida mais utilizada no CSS é o pixel (px).*/
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+}
+
+#p2 {
+    font-weight: bold;
+    color:rgba(81, 155, 0, 0.3); /* Possui o alpha, propriedade de transparência*/
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+#p3 {
+    text-align: justify;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+#p4 {
+    text-shadow: 2px 4px 5px rgb(112, 112, 112);
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+
+#p5 {
+    background-color: bisque;
+}
+
+div {
+    width: 500px;
+    height: 1000px;
+    background-color: rgb(121, 121, 111);
+    background-image: url(https://www.sjc.sp.gov.br/media/9546/sjc-04.jpg?anchor=center&mode=crop&width=940&height=626&rnd=131642417040000000);
+    background-attachment: fixed;
+}
