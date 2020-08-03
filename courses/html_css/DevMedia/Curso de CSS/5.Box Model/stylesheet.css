@@ -1,0 +1,168 @@
+/*
+
+------Width e Height------
+
+As propriedades width e height permitem controlar a altura e largura, como os nomes sugerem, da área de conteúdo de um elemento. Abaixo vemos um exemplo no qual um parágrafo recebe 16 pixels de altura e 200 de largura:
+
+*/
+
+#div1 {
+    height: 16px;
+    width: 200px;
+}
+
+/*
+Algumas vezes pode ser necessário ter maior controle sobre as dimensões de um elemento, especificando o quanto ele poderá crescer ou se encolher na página. Fazemos isso com as propriedades min-width, max-width, min-height e max-height, como no exemplo abaixo:
+*/
+
+#div1 {
+min-width: 80px;
+max-width: 300px;
+min-height: 14px;
+max-height: 100px;
+}
+
+/*
+A forma como o valor dessas propriedades afetam o elemento depende do valor da propriedade box-sizing. Essa propriedade define como a altura e largura de um elemento são calculadas.
+
+O valor padrão de box-sizing é content-box, que define que a largura e altura de um elemento serão definidas pelos valores atribuídos para as propriedades height e width:
+
+*/
+
+#div1 {
+    height: 16px;
+    width: 20px;
+    padding: 16px;
+    box-sizing: content-box;
+}
+
+/*
+No caso acima, as dimensões finais do elemento serão 32 pixels de altura e 36 pixels de largura, pois os valores das propriedades height, width e padding serão somados quando o motor de renderização apresentar o mesmo.
+
+O segundo valor possível para essa propriedade é border-box, que define que a altura e largura de um elemento inclui deve levar em consideração também a sua borda e preenchimento.
+
+*/
+
+#div1 {
+    height: 16px;
+    width: 20px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+/*
+Neste caso, uma vez que definimos o padding do elemento como 16 pixels, a altura final do elemento será de 32 pixels, considerando que este valor corresponde a área de preenchimento superior e inferior (16 + 16). Sendo a altura, height, de 16 pixels, ela será considerada dentro dos 32 pixels já calculados a partir da área de preenchimento. Isso acontece pois no box-sizing o elemento tende a se encolher para se ajustar ao espaço correspondente às suas dimensões. Uma vez que a altura, height, do elemento supere os 32 pixels definidos pelo padding, por exemplo ao receber 33 pixels, a área de conteúdo do elemento passará a ter 1 pixel e a altura final do elemento passará a ser um pixel maior (33 - 32 = 1). O mesmo se aplica a largura, width.
+*/
+
+
+
+/*
+
+------Padding------
+
+É utilizada para preencher (padding) o espaço entre o conteúdo de um elemento e a sua borda. Sem preenchimento, conteúdo e borda ficariam grudados, criando uma aparência ruim na página
+
+A propriedade padding controla a área de preenchimento de um elemento, que envolve o seu conteúdo. Ela pode receber como valor uma lista de dimensões, como no exemplo abaixo:
+
+
+Neste caso, 16 pixels corresponde a área superior, top, 10 pixels a direita, 20 a área inferior e 30 a esquerda, sendo a distribuição feita como os ponteiros de um relógio.
+
+Vale lembrar que o valor border-box, da propriedade box-sizing, influência na forma como padding funciona, neste caso empurrando a área de conteúdo do elemento para dentro. Para saber mais sobre isso leia a seção width e height desta documentação.
+
+*/
+
+
+#div2 {
+    padding: 16px 10px 20px 30px;
+}
+
+
+/*
+
+------Margin------
+
+A margem de uma caixa fica do lado de fora dela. A maioria das caixas possui essa propriedade configurada com um valor inicial para que elas se distanciem das demais.
+
+A propriedade margin controla a área de margem de um elemento, que influencia no espaçamento entre esse e os demais elementos ao seu redor. Ela pode receber como valor uma lista de dimensões, como no exemplo abaixo:
+
+Neste caso, 16 pixels corresponde a área superior, top, 10 pixels a direita, 20 a área inferior e 30 a esquerda, sendo a distribuição feita como os ponteiros de um relógio.
+
+*/
+
+
+#div3 {
+    margin: 16px 10px 20px 30px;
+}
+
+
+/*
+
+------Border------
+
+Toda a caixa possui uma borda que é invisível por padrão.
+
+A propriedade border define o estilo da borda de um elemento. Ela pode receber uma lista de valores de diferentes tipos, como apresentamos a seguir:
+
+No exemplo, o primeiro valor define a largura da borda, que neste caso será de 1 pixel. O segundo valor informa o estilo da borda. Por fim podemos atribuir a borda uma cor.
+
+*/
+
+
+#div4 {
+    border: 1px solid #eee;
+}
+
+
+/*
+
+Para determinar a largura da borda podemos utilizar a propriedade border-width. Ao utilizar essa propriedade, podemos definir individualmente as bordas superior, esquerda, inferior e direita de um elemento:
+
+*/
+
+#div4 {
+    border-width: 1px 2px 1px 2px;
+}
+
+
+
+
+/*_________________________________________________________________*/
+
+
+#div_exemplo h3 {
+    height: 50px ;
+    width: 40%;
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 50px;
+}
+
+#div_exemplo blockquote {
+    height: 120px ;
+    width: 40%; 
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 50px;
+    padding: 10px 20px 30px 60px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#div_exemplo p {
+    height: 200px ;
+    width: 40%;
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 50px;
+}
+
+
+/*
+Use overflow hidden para ocultar o conteúdo que salta para fora de uma caixa e overflow scroll para que ele possa ser visto através de barras de rolagem.
+*/
+
+
+
+
+
+
