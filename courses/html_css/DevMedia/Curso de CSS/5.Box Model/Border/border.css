@@ -1,0 +1,79 @@
+#div1_border_radius_geral {
+
+    border-radius: 20px;
+
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 50px;
+    background-color: blanchedalmond;
+}
+
+
+#div1_border_radius_individual {
+
+    border-radius: 10px 20px 30px 90px;
+
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 50px;
+    background-color: rgb(161, 196, 236);
+}
+
+#imagem {
+
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+
+#div1_border_radius_com_porcentagem {
+    border-radius: 50%;
+
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 50px;
+    background-color: rgb(238, 243, 169);
+    float: left;
+ 
+}
+
+#div1_border_radius_com_porcentagem p {
+    margin-top: 120px;
+}
+
+
+/*
+
+---box-shadow---
+
+Outro efeito que há algum tempo necessitava de algumas imagens para ser obtido é o de sombreamento. Esta propriedade é composta por alguns parâmetros e sua sintaxe de uso é a seguinte:
+
+box-shadow: h-shadow v-shadow blur spread color inset;
+
+h-shadow: posição horizontal da sombra.
+v-shadow: posição vertical da sombra.
+blur: define a intensidade do efeito blur (borrão) da sombra (opcional).
+spread: o tamanho da sombra (opcional).
+color: a cor da sombra.
+inset: define se a sombra é externa (padrão) ou interna (inset).
+
+*/
+
+#div2_box_shadow {
+
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 50px;
+    background-color: rgb(243, 176, 187);
+
+}
