@@ -1,0 +1,76 @@
+/*
+Os elementos em uma página ficam visíveis ou não dependo de duas propriedades das suas caixas:
+
+visibility
+display
+Visibility permite exibir/ocultar um elemento em uma página.
+
+Display permite adicionar ou remover um elemento do layout, tornando ele visível ou não.
+*/
+
+/*
+
+----visibility----
+Quando usamos visibility o elemento pode ser ou não visto na página, mas sempre ocupa o lugar onde ele está no layout.
+
+Ela pode receber dois valores:
+
+visible
+O elemento fica visível na página. Esse é o valor padrão desta propriedade para a maioria dos elementos.
+
+hidden
+O elemento se torna invisível, mas continua ocupando o espaço na página.
+
+*/
+
+/*
+
+----display e none----
+
+Visibility controla a visibilidade do elemento, mas não o remove do layout.
+
+Para remover completamente um elemento do layout, como se ele não estivesse na página, usamos a propriedade display com o valor none.
+
+
+*/
+
+blockquote {
+    visibility: hidden;
+
+    /*Use visibility hidden para ocultar um elemento, sem retirá-lo do layout.*/
+}
+
+#p1 {
+    display: none;
+    /*Use display none para remover o elemento da página e visibility hidden para ocultá-lo.*/
+}
+
+
+div {
+    width: auto;
+    height: 50px;
+    background-color: #bdb8b8;
+}
+
+#botao {
+    width: auto;
+    height: auto;
+    background-color: white;
+}
+
+#aparecer {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(144, 144, 214);
+    text-align: center;
+}
+
+#aparecer p {
+    padding-top: 15px;
+}
+
+#trange {
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
