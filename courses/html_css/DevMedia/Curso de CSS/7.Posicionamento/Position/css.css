@@ -1,0 +1,113 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+}
+
+
+/*
+Neste capítulo estamos estudando como posicionar elementos na página. Há duas propriedades que nos permitem fazer isso que são position e float.
+A posição de um elemento em uma página pode ser controlada utilizando a propriedade position. Ela pode receber quatro valores. Cada um deles representa um modelo de posicionamento do CSS:
+
+
+------Fluxo normal (static)------
+
+
+static é o valor padrão da propriedade position
+
+É o modelo de posicionamento utilizado por padrão. Nele os elementos de bloco passarão a iniciar em uma nova linha, empurrando os demais para baixo.
+
+O valor padrão da propriedade position é static. Ele representa o fluxo normal (normal flow) de posicionamento dos elementos em uma página.
+
+No fluxo normal os elementos:
+
+-Seguem o fluxo da página, sendo posicionados na ordem em que foram declarados no HTML
+
+-Elementos de nível de bloco ocupam todo o espaço disponível na linha em que estão
+
+
+------Posicionamento relativo (relative)------
+
+
+Como o nome sugere, ela especifica uma posição relativa do elemento em relação a algo: o elemento pai.
+
+Usamos o modelo relativo de posicionamento com o valor relative da propriedade position. Nesse modelo usamos as propriedades de deslocamento top, bottom, left e right para mover o elemento
+
+Nesse modelo o elemento pode ser movido para cima, baixo, esquerda ou direita tendo como ponto de partida a sua posição no fluxo normal.
+
+Quando o posicionamento é relativo utilizamos outras quatro propriedades para mover o elemento, são elas:
+
+-top
+-bottom
+-left
+-right
+
+Essas são propriedades de deslocamento. Sendo assim, o elemento estará mais distante do fundo da página quanto maior for o valor de bottom e assim por diante.
+
+
+------Posicionamento absoluto (absolute)------
+
+
+No posicionamento absoluto o elemento é removido do fluxo normal e não afeta ou é afetado pela posição dos demais elementos.
+
+O elemento é removido do fluxo normal.
+
+Um elemento em posicionamento absoluto é removido do fluxo normal. Por isso ele não afeta ou é afetado pela posição dos demais elementos na página.
+
+Novamente, usamos as quatro propriedades de deslocamento para mover o elemento. Relembrando, elas são:
+
+top
+bottom
+left
+right
+
+A segunda opção de posicionamento é a absolute, ou absoluto. Ela faz com que o elemento “saia” da hierarquia estabelecida pelo HTML – na prática, ele é filho da página e não de um elemento qualquer no HTML definido. Assim, é possível posicionarmos esse elemento em qualquer lugar da página, independentemente do que temos lá. Isso pode ser útil em casos que precisamos posicionar um alerta em nossa página, por exemplo, e não queremos “quebrar” o layout.
+
+Apesar dessa possibilidade, é importante utilizar o layout absoluto de forma responsável, uma vez que ele, por não fazer parte da hierarquia da página, pode atrapalhar o desenvolvimento responsivo. Assim, o funcionamento em dispositivos com resoluções menores, como tablets e smartphones, pode ser prejudicado.
+
+Na prática, para um HTML simples, como o apresentado a seguir, o <div> será filho de <body>. Entretanto, como especificamos um posicionamento absoluto, o elemento pai não nos interessa, uma vez que não consideraremos seu posicionamento como referência.
+
+
+------Posicionamento fixo (fixed)------
+
+
+No posicionamento fixo o elemento é posicionado em relação a janela do navegador e se mantém nessa posição quando o usuário utiliza o scroll.
+
+Essa é uma forma de posicionamento absoluto, mas o elemento não se move quando o usuário utiliza as barras de rolagem da janela do navegador.
+
+O posicionamento fixo é um tipo de posicionamento absoluto.
+
+Quando um elemento está posicionado fixamente ele passa a ser ignorado pelos demais, como se não estivesse na página.
+
+Além disso, aqui o elemento é posicionado em relação a janela do navegador e se mantém parado no mesmo lugar quando o usuário utiliza o scroll.
+
+Por fim, temos a opção fixed, que funciona de forma diferente em relação às demais. Embora seja parecida com o posicionamento absoluto, com fixed o elemento “responde”, em termos de layout, ao navegador. Isso significa que, mesmo que naveguemos na página para cima e para baixo, o elemento ficará fixo na mesma posição sempre.
+
+Esse tipo de posicionamento é especialmente útil em casos de menu, para que o usuário não perca o contato com a navegação enquanto lê uma notícia, por exemplo. Sites com conteúdo extenso costumam adotar essa opção para melhorar a experiência do usuário.
+
+
+*/
+
+
+#div1 {
+    width: 300px;
+}
+
+
+#div2 {
+    position: relative;
+    top: 800px;
+    left: 300px;
+}
+
+#div3 {
+    position: fixed;
+    top: 200px;
+    left: 300px;
+}
+
+#div4 {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+}
