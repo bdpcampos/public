@@ -1,0 +1,3 @@
+Flexbox é um recurso do CSS3 que permite que os elementos dentro de um container se ajustem a mudanças de tamanho automaticamente.
+
+É hoje a solução de layout mais utilizada na web.

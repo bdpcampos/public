@@ -1,0 +1,53 @@
+/*
+Veremos nesse exemplo como usar o Flexbox para organizar os elementos e torná-los autoajustáveis em relação ao contêiner sem o uso do float e sem a necessidade de um tamanho fixo no contêiner.
+*/
+
+
+*{font-family: arial;}
+html, body{
+    margin: 0;
+    height:100%;
+}
+
+header{
+    display: table;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: green;
+    margin-bottom: 20px;
+}
+
+/****************/
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.card{
+    border: 1px solid #86a5ba;
+    margin: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 45%;
+
+}
+
+.card div {
+    flex-grow: 1; /*faz com que tudo o que estiver depois do elemento selecionado seja empurrado até o final do container*/
+    margin-bottom: 10px;
+}
+
+/*Media Querie*/
+
+@media (max-width: 727px){
+    .card{
+        flex-basis: 100%;
+        margin: 15px 0;;
+    }
+}

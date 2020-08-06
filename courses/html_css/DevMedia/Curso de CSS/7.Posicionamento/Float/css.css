@@ -1,0 +1,50 @@
+/*
+
+------Flutuação (float)------
+
+Nesse modelo de posicionamento o elemento sai do fluxo normal (Slide 1) e é posicionado totalmente a esquerda ou à direita do contêiner que o contém. A caixa do elemento que flutua se torna de nível de bloco, caso ainda não seja, e cada outro elemento se ajusta ao redor dele.
+
+Usamos float para posicionar um elemento o mais à esquerda ou à direita possível. Com isso cada outro elemento ao redor deste se ajustará ao redor dele
+
+Float possui dois valores comumente utilizados: left ou right. Left move o elemento o máximo possível para a esquerda e right faz o mesmo para a direita.
+
+Quando utilizamos float é comum precisarmos controlar a largura do elemento com width. Dessa forma, o elemento flutuando não acabará tomando todo o espaço disponível no contêiner dele como faria no fluxo normal.
+
+A propriedade float é muito utilizada para criar colunas.
+
+Use width para ajustar a largura de elementos flutuantes.
+
+Quando usamos float em todos elementos dentro de um contêiner, alguns navegadores podem tratá-lo como se ele tivesse zero pixel de altura.
+
+O problema do contêiner com altura de zero pixel ocorre quando todos os elementos em um contêiner estão flutuando.
+
+Atualmente, a forma de resolver esse problema requer a utilização de duas propriedades para formar um tipo de Hack, um código CSS usada para corrigir um problema do navegador:
+
+overflow
+width
+
+Usamos as propriedades overflow e width para corrigir o erro do contêiner de altura de zero pixel
+
+*/
+
+
+div {
+    border: 1px solid #000;
+    overflow: auto;
+    width: 50%;
+}
+
+h3 {
+    float: left;
+    width: 200px;
+}
+
+ul {
+    float: right;
+    width: 200px;
+}
+
+#sec {
+    width: 90%;
+    margin: 0 auto;
+}
