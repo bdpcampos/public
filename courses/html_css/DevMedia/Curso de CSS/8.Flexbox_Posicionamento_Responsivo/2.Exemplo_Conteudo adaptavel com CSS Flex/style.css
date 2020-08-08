@@ -1,0 +1,118 @@
+* {box-sizing: border-box;} /*Para a largura dos elementos não sofrerem alteração do padding
+***The CSS box-sizing property allows us to include the padding and border in an element's total width and height***
+*/
+
+body {
+    margin: auto; /*Uma forma de zerar a margem*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: rgb(122, 122, 122);
+    line-height: 25px;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap; /*Informa para ter quebra de linha, respeitando a largura dos elementos internos. */
+    max-width: 900px;
+    width: 100%;
+    margin: 50px auto;
+}
+
+
+.block {
+    width: calc(100%/3 - 20px);/*O calculo divide em 3 colunas o total da página e tira as margens laterais decladas abaixo.
+    definimos que a largura do elemento é calc(100%/3 - 20px). Pegamos 100% do valor e dividimos por 3, que é a quantidade de itens que queremos por linha, e desconsideramos o valor das margens aplicado na linha 11, onde temos 10px para a direita e 10px para a esquerda.
+    
+    */
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.block-img{
+    height: calc(((100vw - (100vw - 900px)) / 3 - 20px) / 2);
+    /*
+    definimos um cálculo dinâmico para a altura da nossa imagem. Quando inserimos o valor ((100vw - (100vw - 900px))/3 - 20px) estamos informando a largura do nosso bloco, semelhante ao que fizemos na classe .block da linha 10. Porém, agora estamos utilizando o valor da área útil e no final dividimos o conteúdo por 2 a fim de termos uma proporção de 2/1 para nossa imagem
+    */
+}
+
+
+.block-img img {
+    width: 100%; /*A imagem vai se ajustar ao máximo do containter!!!!!!!*/
+    height: 100%;
+    object-fit: cover;/*Vai fazer com que a imagem não se distorça para encaixar no container*/
+}
+
+
+.block-desc {
+    padding: 15px;
+    flex-grow: 1;/*Empurra os próximos elementos para baixo*/
+}
+
+
+.block-link {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.block-link a {
+    color: #494949;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: 0.3s ease;
+}
+
+
+.block-link a:hover {
+    background-color: rgb(116, 116, 116);
+    color: #fff;
+}
+
+
+/*
+Agora vamos ajustar a página a displays menores, considerando tablets e celulares.
+O conteúdo vai quebrar e diminuir as colunas. E os elementos não vão se ajustar as poucos, eles ficam fixos e quebram quando a tela for diminuida até o ponto declarado.
+O primeiro é para telas menores que 768px de largura, onde existirão apenas 2 colunas.
+*/
+
+@media (max-width: 768px) {
+    .block {
+        width: calc(100% / 2 - 20px);
+    }
+    .block-img {
+        height: calc((100vw - 20px) / 2 );
+    }
+
+}
+
+
+@media (max-width: 425px) {
+    .block {
+        width: calc(100% - 20px);
+    }
+    .block-img {
+        height: calc((100vw - 20px) / 2 );
+    }
+
+}
+
+
+@media (max-width: 320px) {
+    .block {
+        width: calc(100%);
+        margin: 10px 0;
+    }
+    .block-img {
+        height: calc(100vw / 2 );
+    }
+
+}
