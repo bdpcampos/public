@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx - pattern Attribute</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="" id="cpf" maxlength="11">
+
+        <input type="submit" value="Enviar" id="enviar" onclick="exibir()">
+
+
+    </form>
+
+    <span id="exibicao"></span>
+</body>
+<script>
+    const cpf = document.querySelector("#cpf")
+
+    cpf.addEventListener("keyup", () => {
+        let value = cpf.value.replace(/[^0-9]/g, "").replace(/^([\d]{3})([\d]{3})([\d]{3})([\d]{2})$/, "$1.$2.$3-$4")
+
+    cpf.value = value
+
+    })
+
+    const enviar = document.querySelector("#enviar")
+
+    function exibir(){
+        const valorExibir = cpf.value.replace(/[^0-9]/g, "")
+        document.getElementById("exibicao").innerHTML = valorExibir
+        
+
+
+    }
+
+    
+
+</script>
+</html>
