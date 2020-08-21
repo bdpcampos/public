@@ -82,7 +82,7 @@ data.getYear(); // No caso acima o resultado foi 119, porque o ano é 2019 (2019
 
 /* Detectar uma data inválida em JavaScript requer duas verificações: primeiro constatamos se o objeto é uma instância de Date e depois se o seu valor não é um número. */
 
-const data = new Date(‘Thu’)
+const data = new Date(Thu)
 data instanceof Date && !isNaN(data) // false
 
 /*A data é inválida porque quando passamos um texto para o construtor da classe Date, se espera que ele esteja num formato específico, o que não é o caso. Na linha seguinte fazemos as duas verificações citadas anteriormente e, dado que a data é inválida, o resultado é false.*/
@@ -131,7 +131,7 @@ const umaHora = 1000*60*60
 
 /* Caso a data/hora esteja escrita com uma máscara, algo muito comum na programação web, podemos obter a quantidade de milissegundos dessa representação para atribuir esse número ao construtor de Date, criando assim um objeto válido. */
 
-var milissegundos = Date.parse(“2019/01/13”);
+var milissegundos = Date.parse(2019/01/13);
 var data = new Date(milissegundos);
 
 /* O método parse() converte a representação em texto de uma data/hora em milissegundos, retornando um inteiro com esse valor, o qual pode ser usado em um dos construtores de Date. Isso será necessário principalmente porque o formato de data/hora que estamos acostumados a usar no Brasil não é compatível com aquele recebido no construtor de Date. */
