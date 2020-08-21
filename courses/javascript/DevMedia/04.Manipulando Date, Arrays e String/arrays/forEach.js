@@ -4,7 +4,7 @@
 O método forEach() executará uma função para cada elemento presente em um array.
 
 Sintaxe
-array.forEach(funcao([valorAtual, índice, array]), argumentoThis)
+array.forEach(funcao(valorAtual, índice, array), argumentoThis)
 
 Parâmetros
 funcao() é a função a ser executada para cada elemento do array. Pode receber três parâmetros:

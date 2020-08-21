@@ -94,8 +94,9 @@ data instanceof Date && !isNaN(data) // false
 const data = new Date() 
 data.setDate(data.getDate() + 3)
 data.getDate()
-// 13 - No caso acima o dia inicial era 10 e após a soma se tornou 13. Caso a data fosse 31/8, após somar um dia ela se tornaria 1/9.
 
+data.getMonth()
+// 13 - No caso acima o dia inicial era 10 e após a soma se tornou 13. Caso a data fosse 31/8, após somar um dia ela se tornaria 1/9.
 
 
 // Comparar duas datas é muito simples, basta usar o operador de comparação estrita (===) e o método getTime(), que retorna o número de milissegundos desde 1900:
