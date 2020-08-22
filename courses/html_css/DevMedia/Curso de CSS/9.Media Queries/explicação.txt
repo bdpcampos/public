@@ -1,3 +1,6 @@
 As media queries são regras do CSS que nos permitem aplicar determinadas formatações apenas em condições específicas.
 
 Por exemplo, por meio delas podemos aplicar certos estilos somente quando a página for acessada através de um dispositivo com certas dimensões mínimas ou máximas, bem como quando a página for visualizada em modo impressão.
+
+
+
