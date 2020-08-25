@@ -1,0 +1,214 @@
+body {
+    background-color: #060606;
+    background-image: url(_images/background-pizza.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+}
+
+#banner {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 76px;
+    padding: 30px 70px 30px 70px;
+}
+
+#banner h1 {
+    float: left;
+    margin: 0px;
+}
+
+#banner nav {
+    float: right;
+    position: relative;
+    top: 30px;
+}
+
+/*descendent selector*/
+
+#banner nav ul{
+    margin: 0px;
+}
+
+#banner nav ul li {
+    display: inline-block;
+    width: 100px;
+}
+
+#banner nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: bold 14px Helvetica;
+}
+
+
+#sabores-pizzas {
+    padding-top: 400px;
+    padding-bottom: 60px;
+}
+
+#sabores-pizzas h2 {
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 0px;
+    line-height: 6; /* Para dar espaçamento entre paragrafos e outros elementos da página, o recomendado é usar a propriedade do paragrafo line-height, que é o espaçamento entre os parágrafos.*/
+    text-shadow: 2px -2px 10px #060606;
+}
+
+#sabores-pizzas table {
+    margin: 0px auto 0px auto;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #2a2a2a;
+}
+
+#sabores-pizzas td, #sabores-pizzas th {
+    border: 1px #000 solid;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 25px;
+}
+
+#sabores-pizzas .texto-negativo {
+    color: #fb3958;
+}
+
+#sabores-pizzas .texto-positivo {
+    color: #87b50f;
+}
+
+
+#copyright {
+    padding: 35px 0 10px 0;
+    background-color: #060606;
+}
+
+#copyright a {
+    text-align: center;
+    display: block;  /* essa propriedade faz com que o elemento tome todo o espaço da linha na visualização. Assim todos os elemento que estão abaixo serão "empurrados" para baixo. O elemento a vem como "inline" como padrão, ai precisamos mudar. Já a tag p vem como "block" por padrão*/
+}
+
+#copyright p {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+	clear: both;
+	margin:0 30%;
+}
+
+form label {
+	margin:15px 0;
+	display: block;
+	text-transform: uppercase;
+}
+
+form input, form textarea {
+	border:1px solid #2a2a2a;
+	height: 10px;
+	width: 500px;
+	border-radius: 30px;
+	background-color: transparent;
+	display: block;
+	padding: 25px 25px;
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	font-style: italic;
+}
+
+form textarea {
+	height: 200px;
+	font-size: 0.75em;
+}
+
+input[type="submit"] {
+    width: 555px;
+    margin: 25px 0;
+    padding-top: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+form a {
+	cursor: pointer;
+	border: 1.3px solid #fff;
+	padding: 8px 14px;
+	border-radius: 50%;
+}
+
+form a:hover {
+	background-color: #6d6d6d6d;
+}
+
+form a:active {
+	background-color: #777;
+}
+
+input.quantidade {
+	text-align: center;
+	border: none;
+	display: inline;
+	width: 30px;
+	padding: 5px 0px;
+	margin-left: 15px;
+}
+
+form td:nth-child(2){
+	min-width: 123px;
+}
+
+#sec-pedido table {
+	width: 100%;
+	background-color: #2a2a2a;
+	clear: both;
+	border-collapse: collapse;
+	text-transform: uppercase;
+	margin-top:100px;
+}
+
+#sec-pedido th, #sec-pedido td, #sec-pedido p, #sec-pedido label {
+	font-size: 12px;
+	color:#fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+#sec-pedido th {
+	color: #4d4d4d;
+	font-weight: bold;
+}
+
+#sec-pedido th, #sec-pedido td {
+	border:1px #000 solid;
+	padding: 25px;
+	text-align: center;
+	width: 20%;
+}
+
+
+#sec-pedido h2 {
+	color:#fff;
+	font-family: 'Roboto', sans-serif;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display:inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	float: left;
+	margin: 50px 45%;
+}
