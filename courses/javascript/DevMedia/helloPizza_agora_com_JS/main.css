@@ -131,10 +131,11 @@ form textarea {
 	font-size: 0.75em;
 }
 
-input[type="submit"] {
+input[type="submit"], button {
     width: 555px;
     margin: 25px 0;
-    padding-top: 15px;
+	padding-top: 15px;
+	text-align: center;
 }
 
 input:focus,
@@ -204,11 +205,18 @@ form td:nth-child(2){
 	color:#fff;
 	font-family: 'Roboto', sans-serif;
 	padding: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(71, 69, 69, 0.5);
 	border-radius: 15px;
-	display:inline-block;
+	display: block;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	float: left;
 	margin: 50px 45%;
+}
+
+button {
+	display: block;
+	position: relative;
+	left: 30%;
+	border-radius: 1.25rem;
+	
 }

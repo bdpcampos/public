@@ -81,7 +81,7 @@
 
         <section id="sec-pedido">
             <h2>Pedido</h2>
-            <form action="http://arquivo.devmedia.com.br/projeto/requisicao.php" method="POST">
+            <form name="pedido" action="http://arquivo.devmedia.com.br/projeto/requisicao.php" method="POST">
                 <table>
                     <thead>
                         <tr>
@@ -95,7 +95,7 @@
                             <td>Calabresa</td>
                             <td>
                                 <a class="btn-decrementa">-</a>
-                                <input max="9" class="quantidade" value="0" type="number" name="calabresa">
+                                <input max="10" class="quantidade" value="0" type="number" name="calabresa">
                                 <a class="btn-incrementa">+</a>
                             </td>
                             <td class="preco-item">12.50</td>
@@ -104,7 +104,7 @@
                             <td>Mozzarella</td>
                             <td>
                                 <a class="btn-decrementa">-</a>
-                                <input max="9" class="quantidade" value="0" type="number" name="mozzarella">
+                                <input max="10" class="quantidade" value="0" type="number" name="mozzarella">
                                 <a class="btn-incrementa">+</a>
                             </td>
                             <td class="preco-item">11.50</td>
@@ -113,7 +113,7 @@
                             <td>Pepperoni</td>
                             <td>
                                 <a class="btn-decrementa">-</a>
-                                <input max="9" class="quantidade" value="0" type="number" name="pepperoni">
+                                <input max="10" class="quantidade" value="0" type="number" name="pepperoni">
                                 <a class="btn-incrementa">+</a>
                             </td>
                             <td class="preco-item">14.00</td>
@@ -122,7 +122,7 @@
                             <td>Marguerita</td>
                             <td>
                                 <a class="btn-decrementa">-</a>
-                                <input max="9" class="quantidade" value="0" type="number" name="marguerita">
+                                <input max="10" class="quantidade" value="0" type="number" name="marguerita">
                                 <a class="btn-incrementa">+</a>
                             </td>
                             <td class="preco-item">13.00</td>
@@ -131,7 +131,7 @@
                             <td>Portuguesa</td>
                             <td>
                                 <a class="btn-decrementa">-</a>
-                                <input max="9" class="quantidade" value="0" type="number" name="portuguesa">
+                                <input max="10" class="quantidade" value="0" type="number" name="portuguesa">
                                 <a class="btn-incrementa">+</a>
                             </td>
                             <td class="preco-item">14.50</td>
@@ -140,7 +140,7 @@
                             <td>Alho</td>
                             <td>
                                 <a class="btn-decrementa">-</a>
-                                <input max="9" class="quantidade" value="0" type="number" name="alho">
+                                <input max="10" class="quantidade" value="0" type="number" name="alho">
                                 <a class="btn-incrementa">+</a>
                             </td>
                             <td class="preco-item">13.50</td>
@@ -155,6 +155,7 @@
                 </table>
                 <input type="submit" value="enviar" />
             </form>
+            <button id="botao-zerar">Zerar pedido</button>
         </section>
 
     </main>
