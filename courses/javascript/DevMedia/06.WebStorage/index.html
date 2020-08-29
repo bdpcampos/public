@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form usando LocalStorage</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <form method="post" enctype="text/plain">
+		<fieldset>
+			<legend>Envio de mensagem</legend>
+			<label>Assunto</label><br />
+			<input type="text" id="txtAssunto" placeholder="Assunto"/>
+			<br />
+			<label>Mensagem</label><br />
+			<textarea id="txtMensagem" placeholder="Digite sua mensagem"></textarea><br />
+			<button type="button" id="btnSalvar">Salvar Rascunho</button>
+			<button type="button" id="btnSalvarSessao" name="salvaSessao">Salvar Sessão</button>
+			<button type="button" id="btnEnviar" class="enviar" name="enviar">Enviar</button>
+		</fieldset>
+	</form>
+	<script src="script.js"></script>
+</body>
+</html>
