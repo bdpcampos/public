@@ -1,0 +1,29 @@
+# apt-get -y install apache2
+
+# wget http://www.denilsonbonatti.com.br/centos/aplicativo.tar
+
+=================================================================
+
+# vim /etc/apache2/sites-available/minhaempresa.com.br.conf
+
+ <VirtualHost *:80>
+    ServerName www.minhaempresa.com.br
+    DocumentRoot /var/www/html/minhaempresa.com.br/
+    ErrorLog /var/log/apache2/virtual.host.error.log
+    CustomLog /var/log/apache2/virtual.host.access.log combined
+    LogLevel warn
+</VirtualHost>
+
+# vim /var/www/html/minhaempresa.com.br/index.php
+
+<html>
+<body>
+<div style="width: 100%; font-size: 40px; font-weight: bold; text-align: center;">
+MINHAEMPRESA.COM.BR
+</div>
+</body>
+</html>
+
+# a2ensite minhaempresa.com.br
+# systemctl restart apache2  
+

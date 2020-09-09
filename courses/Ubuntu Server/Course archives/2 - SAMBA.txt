@@ -1,0 +1,46 @@
+[adm]
+comment = Pasta privada
+path = /adm/
+writable = yes
+create mode = 0770
+directory mode = 0770
+guest ok = no
+valid users = @ADMIN
+
+
+[secretaria]
+comment = Pasta privada
+path = /secretaria/
+writable = yes
+create mode = 0770
+directory mode = 0770
+guest ok = no
+valid users = @SECRETARIA
+
+=========================================================
+
+recycle:keeptree = yes
+recycle:versions = yes
+recycle:repository = /lixeira/
+recycle:exclude = *.tmp; *.bkp
+
+vfs objects = recycle
+
+[lixeira]
+comment = Diretório da lixeira do SAMBA
+path = /lixeira/
+writable= yes
+read only = no
+guest ok = yes
+browseable = yes
+
+========================================================
+
+veto files = *.mp3/*.mp4/*.wmv/*.avi/*.exe/*.bat/*.com
+
+
+
+
+
+   
+

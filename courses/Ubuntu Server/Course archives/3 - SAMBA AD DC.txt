@@ -1,0 +1,28 @@
+# apt-get -y install samba krb5-config winbind
+
+# rm /etc/samba/smb.conf
+
+# rm /etc/krb5.conf
+
+# samba-tool domain provision 
+
+# cp /var/lib/samba/private/krb5.conf /etc/ 
+
+# systemctl restart smbd samba-ad-dc 
+
+# samba-tool domain level show 
+
+===================================
+
+[publica]
+comment = Pasta compartilhada
+path = /publica/
+writable= yes
+read only = no
+guest ok = yes
+browseable = yes
+guest only = yes
+create mode = 0777
+directory mode = 0777
+
+# systemctl restart smbd samba-ad-dc

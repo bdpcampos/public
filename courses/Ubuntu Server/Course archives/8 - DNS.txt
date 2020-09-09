@@ -1,0 +1,106 @@
+# apt-get -y install bind9 bind9utils
+
+# vim /etc/bind/named.conf
+
+
+include "/etc/bind/named.conf.internal-zones";
+
+
+
+# vim /etc/bind/named.conf.internal-zones
+
+
+
+view "internal" {
+        match-clients {
+                localhost;
+                192.168.100.0/24;
+        };
+
+        zone "empresa.corp" {
+                type master;
+                file "/etc/bind/empresa.corp.lan";
+                allow-update { none; };
+        };
+
+        zone "192.168.100.in-addr.arpa" {
+                type master;
+                file "/etc/bind/192.168.100.db";
+                allow-update { none; };
+        };
+        include "/etc/bind/named.conf.default-zones";
+};
+
+# vim /etc/bind/named.conf.options
+
+# vim /etc/bind/empresa.corp.lan
+
+
+$TTL 24h
+@       IN      SOA     dns.empresa.corp. root.empresa.corp. (
+        1               ; Serial
+        12h             ; Refresh
+        15m             ; Retry
+        3w              ; Expire
+        2h              ; Mininum TTL
+)
+
+@       IN      NS      dns.empresa.corp.
+dns     IN      A       192.168.100.10
+
+servidor1  IN      A       192.168.100.10
+servidor2  IN      A       192.168.100.11
+www        IN      A       192.168.100.11
+
+
+
+# vim /etc/bind/192.168.100.db
+
+$TTL 24h
+@       IN      SOA     dns.empresa.corp. root.empresa.corp. (
+        1               ; Serial
+        12h             ; Refresh
+        15m             ; Retry
+        3w              ; Expire
+        2h              ; Mininum TTL
+)
+
+@        IN      NS     dns.empresa.corp.
+10      IN      PTR     dns.empresa.corp.
+
+11      IN      PTR     www.empresa.corp.
+10      IN      PTR     servidor1.empresa.corp.
+11      IN      PTR     servidor2.empresa.corp.
+
+
+# vim /etc/resolv.conf
+# dig empresa.corp.
+
+======================================================================
+
+# vim /etc/bind/named.conf.internal-zones
+
+zone "minhaempresa.com.br" {
+                type master;
+                file "/etc/bind/minhaempresa.com.br.lan";
+                allow-update { none; };
+        };
+
+
+
+# vim /etc/bind/minhaempresa.com.br.lan
+
+
+$TTL 24h
+@       IN      SOA     dns.minhaempresa.com.br. root.minhaempresa.com.br. (
+        1               ; Serial
+        12h             ; Refresh
+        15m             ; Retry
+        3w              ; Expire
+        2h              ; Mininum TTL
+)
+
+@       IN      NS      dns.minhaempresa.com.br.
+dns     IN      A       192.168.100.10
+
+www        IN      A       192.168.100.11

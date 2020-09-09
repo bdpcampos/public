@@ -1,0 +1,15 @@
+# apt-get -y install isc-dhcp-server
+
+# vim /etc/dhcp/dhcpd.conf
+
+
+subnet 192.168.100.0 netmask 255.255.255.0 {
+     # default gateway
+     option routers 192.168.100.11;
+     # Mascara de rede
+     option subnet-mask 255.255.255.0;
+     # Faixa de entrega
+     range dynamic-bootp 192.168.100.51 192.168.100.254;
+}
+
+# systemctl restart isc-dhcp-server 

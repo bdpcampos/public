@@ -1,0 +1,64 @@
+# apt-get -y install squid
+
+# vim /etc/squid/squid.conf
+
+acl lan src 192.168.100.0/24
+
+http_access allow lan
+
+===============================================
+
+acl bloqueio url_regex "/etc/squid/bloqueio"
+
+http_access deny bloqueio !localhost
+
+
+# vim /etc/squid/bloqueio
+
+================================================
+
+acl dominio dstdomain "/etc/squid/dominio"
+
+http_access deny dominio !localhost
+
+# vim /etc/squid/dominio
+
+==================================================
+
+# apt-get -y install apache2-utils
+
+acl CONNECT method CONNECT
+
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/.htpasswd
+auth_param basic children 5
+auth_param basic realm Squid Basic Authentication
+auth_param basic credentialsttl 5 hours
+acl password proxy_auth REQUIRED
+http_access allow password
+
+# htpasswd -c /etc/squid/.htpasswd internet
+
+==================================================
+
+# apt-get -y install sarg
+
+# vim /etc/sarg/sarg.conf
+
+;Linha 120,121
+output_dir /var/www/html/squid-reports
+
+;Linha 132
+resolve_ip yes
+
+# vim /etc/apache2/conf-available/sarg.conf
+
+<Directory "/var/www/html/squid-reports">
+    Require local
+    Require ip 192.168.100.0/24
+</Directory>
+
+# mkdir /var/www/html/squid-reports 
+# a2enconf sarg 
+# systemctl restart apache2
+# /usr/bin/sarg
+

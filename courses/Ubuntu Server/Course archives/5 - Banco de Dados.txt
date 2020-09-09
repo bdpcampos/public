@@ -1,0 +1,30 @@
+# apt-get -y install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
+
+=====================================================================================
+
+
+# apt-get -y install mariadb-server
+
+# systemctl restart mysql
+
+# mysql_secure_installation 
+
+# mysql -u root -p 
+
+======================================================================================
+
+# apt-get -y install phpmyadmin php-mbstring php-gettext
+
+# mysql -u root -p mysql 
+
+update user set plugin='' where user='root'; 
+flush privileges; 
+exit
+
+
+# vim /etc/phpmyadmin/apache.conf
+
+Require ip 127.0.0.1 192.168.100.0/24
+
+# systemctl restart apache2 
+# systemctl restart mysql
