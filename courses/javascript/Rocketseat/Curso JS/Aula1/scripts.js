@@ -49,6 +49,8 @@ function pares(x,y) {
 pares(29, 321);
 
 
+
+
 // Ex 3
 
 function temHabilidade(skills) {
@@ -72,3 +74,43 @@ const skills = ["Javascript", "ReactJS", "React Native"];
 temHabilidade(skills); 
 
 
+
+// Ex 4
+
+
+function experiencia(anos) {
+    if (anos <= 1) {
+        exibeTexto('<p>Iniciante</p>');
+    } else if (anos <= 3) {
+        exibeTexto('<p>Intermediário</p>');
+    } else if (anos <= 6) {
+        exibeTexto('<p>Avançado</p>');
+    } else {
+        exibeTexto('<p>Jedi Master</p>');
+    }
+   }
+
+const anosEstudo = 7;
+
+experiencia(anosEstudo);
+
+
+// Ex 5
+
+const usuarios = [
+    {
+    nome: "Diego",
+    habilidades: ["Javascript", "ReactJS", "Redux"]
+    },
+    {
+    nome: "Gabriel",
+    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+    }
+   ];
+
+   for (let usuario of usuarios){
+        exibeTexto(`<p>O ${usuario.nome} possui as habilidades: ${usuario.habilidades.join(', ')}</p>`)
+   }
+
+
+  
