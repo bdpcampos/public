@@ -46,7 +46,7 @@ for (let i = 0; i < boxClass.length; i++) {
 
     boxClass[i].style.width = '300px';
 
-    boxClass[i].style.height = '100px';
+    boxClass[i].style.minHeight = '100px';
     
     boxClass[i].style.backgroundColor = '#cccccc';
 
@@ -116,28 +116,54 @@ function trocaCor() {
 
 ///////// Ex 3
 
-const nomes = ["Diego", "Gabriel", "Lucas"];
- 
+let nomes = ["Diego", "Gabriel", "Lucas"];
+
 const div = document.querySelector('#lista');
 
-div.appendChild(document.createElement('ul'))
 
-const ul = document.querySelector('#lista ul')
+montarLista();
 
 
-for (let i = 0; i < nomes.length; i++) {
-    const linha = document.createElement('li')
+function montarLista() {
 
-    const textoLinha = document.createTextNode(nomes[i])
+    const ulExiste = document.querySelector("#lista ul");
 
-    ul.appendChild(linha)
+    if(ulExiste != null){
+        div.removeChild(ulExiste);
+    }
 
-    linha.appendChild(textoLinha)
+    div.appendChild(document.createElement('ul'));
 
-    linha.style.listStyle = 'none'
+    const ul = document.querySelector('#lista ul');
+
+    for (let i = 0; i < nomes.length; i++) {
+        const linha = document.createElement('li')
+    
+        const textoLinha = document.createTextNode(nomes[i])
+    
+        ul.appendChild(linha)
+    
+        linha.appendChild(textoLinha)
+    
+        linha.style.listStyle = 'none'
+    }
 }
+
 
 
 
 ///////// Ex 4
 
+div.addEventListener('click', adcionar, false);
+
+function adcionar() {
+    const inputNome = document.querySelector('#lista input');
+
+    const nomeDigitado = inputNome.value;
+
+    nomes.push(nomeDigitado);
+
+    inputNome.value = null
+
+    montarLista();
+}
