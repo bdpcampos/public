@@ -1,0 +1,7 @@
+#app li {
+    list-style: none;
+}
+
+#app a {
+    margin-left: 10px;
+}
