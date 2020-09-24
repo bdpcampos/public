@@ -55,13 +55,13 @@ function newToDo() {
 
 
 function renderToDos() {
-    if(localStorage.toDos){
-    const initToDos = JSON.parse(localStorage.toDos);
+ 
+    const initToDos = JSON.parse(localStorage.toDos) || [];
 
     for(let element of initToDos) {
         createToDoElement(element);
     }
-    }
+    
 }
 
 
@@ -71,5 +71,5 @@ renderToDos();
 
 buttonElement.addEventListener('click', newToDo, false);
 
-
+inputElement.addEventListener('keypress', function(key){if(key.keyCode === 13) {newToDo()}}, false); 
 
