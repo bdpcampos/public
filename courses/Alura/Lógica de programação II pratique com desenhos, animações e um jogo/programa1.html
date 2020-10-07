@@ -17,6 +17,43 @@
 
 <script>
 
+    const tela = document.querySelector('canvas');
+    const pincel = tela.getContext('2d');
+
+
+    //Retângulos
+
+    pincel.fillStyle = '#dddddd';
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(200, 200, 400, 200);
+
+
+    pincel.fillStyle = 'blue';
+    pincel.fillRect(400, 0, 600, 400);
+
+
+    //Triângulo
+
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300, 200);
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+    pincel.moveTo(300, 200);
+    pincel.fill();
+
+
+    //Círculo
+
+    pincel.fillStyle = 'purple'
+    pincel.beginPath();
+    pincel.arc(300, 200, 50, 0, 2 * Math.PI);
+    pincel.fill();
 
 
 </script>
