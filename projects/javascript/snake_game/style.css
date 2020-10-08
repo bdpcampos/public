@@ -4,4 +4,22 @@
     width: 600px;
     height: 600px;
 }
+
+#arrow {
+    width: 300px;
+}
+
+#container {
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+}
     

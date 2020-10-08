@@ -14,7 +14,7 @@ function drawScreen() {
     arrayY.push(posY);
 
     for (let i = 0; i < snakeSize; i++){
-        Green(arrayX[i], arrayY[i]);
+        drawGreenSquare(arrayX[i], arrayY[i]);
     }
 
     if(arrayX.length > snakeSize){
@@ -39,6 +39,11 @@ function drawScreen() {
             posX += squareSize;
             break;
     }
+    console.log(posX, posY);
+    if(hittedProhibitedSpace()) {
+        stopGame();
+        alert("You Lost !!!")
+    }
 }
 
 function moveDirectionInput(object) {
@@ -52,6 +57,25 @@ function increaseSnake() {
     snakeSize++;
 }
 
+function hittedProhibitedSpace() {
+    let booleanVariable = false;
+    const posXOnArrayX = arrayX.indexOf(posX)
+    const posYOnArrayY = arrayY.indexOf(posY)
+
+
+    if(posXOnArrayX >= 0 && posYOnArrayY >= 0 && posXOnArrayX === posYOnArrayY) {
+        booleanVariable = true;
+    }
+
+    if(posX < -25 - squareSize || posX > 600 + squareSize || posY < -25 - squareSize || posY > 600 + squareSize ) {
+        booleanVariable = true;
+    }
+
+    return booleanVariable;
+}
+
+
+
 function startGame() {
     screenInterval = setInterval(drawScreen, 200);
 }
@@ -60,11 +84,21 @@ function stopGame() {
     clearInterval(screenInterval);
 }
 
+function newGame() {
+    snakeSize = 10;
+    moveDirection = 'right';
+    posX = 275;
+    posY = 275;
+    arrayX = [];
+    arrayY = [];
+    startGame();
+}
+
 
 const screen = document.querySelector('canvas');
 let brush = screen.getContext('2d');
 const squareSize = 25;
-let snakeSize = 1;
+let snakeSize;
 let screenInterval;
 
 let moveDirection = 'right';
@@ -75,8 +109,8 @@ let arrayX = [];
 let arrayY = [];
 
 document.addEventListener('keydown', moveDirectionInput);
-document.querySelector('#start').addEventListener('click', startGame)
 document.querySelector('#stop').addEventListener('click', stopGame)
+document.querySelector('#new').addEventListener('click', newGame)
 
 
 
