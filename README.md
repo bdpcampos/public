@@ -5,7 +5,7 @@ This is my repository to share stuff.
 **Enjoy!**
 
 
-## **PROJECTS**
+## **Projects**
 
 ### [Financial Website](https://financial-website.vercel.app/)
 
