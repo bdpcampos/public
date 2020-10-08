@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176774463-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());dd
+    gtag('config', 'UA-176774463-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Cred4 é uma ESC, Empresa Simples de Crédito, que oferece acesso ao crédito fácil para Empresas de Pequeno Porte, Micro Empresas e Micro Empreendedores Individuais. Empréstimos para empreendedores.">
+    <meta name="keywords" content="empréstimo, crédito, finanças, empreendedorismo, empresas, pequenas empresas, MEI, ME, EPP, dinheiro">
+    <meta name="author" content="Cred4 Empresa Simples de Crédito">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cred4 - Empresa Simples de Crédito</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+            <ul id="menu-nav-container">
+                <li id="logoMenuMobile" class="menu-nav-inner"><a href="index.html"><img src="img/logo.png" id="logo-menu" alt="Logo - Cred4 Empresa Simples de Crédito"></a></li>
+                <li id="botaoMenuMobile"><img src="img/menu.png" id="botaoMenuMobileImagem" alt="Menu"></li>
+                <li class="menu-nav-inner"><a href="#section-01" class="menu-link">Home</a></li>
+                <li class="menu-nav-inner"><a href="#quem-somos" class="menu-link">Quem Somos</a></li>
+                <li class="menu-nav-inner"><a href="#para-sua-empresa" class="menu-link">Para sua Empresa</a></li>
+                <li class="menu-nav-inner"><a href="#contato" class="menu-link">Contato</a></li>
+                <li class="menu-nav-inner"><button class="botao">Solicite Já</button></li>
+                <li class="menu-nav-inner"><a href="tel:+551130901240" class="menu-link">(11) 3090-1240</a></li>
+            </ul>
+    </header>
+
+    <div id="quem-somos"></div>
+    <div id="para-sua-empresa"></div>
+    <div id="contato"></div>
+
+    <div id="whatsapp">
+        <a href="https://wa.me/551130901240" target="_blank"><img src="/img/whatsapp.png" alt="whatsapp"></a>
+    </div>
+  
+    <main>
+        <article id="section-01">
+            <div id="div-arange">
+                <section id="sec-01-div-display" class="sec-01-divclass">
+                    <div id="sec-01-inner-div-display">
+                        <div id="sec-01-inner-div-display-header">
+                            <h3>
+                                De quanto o seu <em class="emphasiz">negócio</em> precisa?<img src="img/arrow_green.png" alt="" class="arrow">
+                            </h3>
+                        </div>
+                        <nav id="sec-01-inner-div-display-nav">
+                            <button value="5000" class="botao" onclick="irParaFormularioSuperior(value)">R$ 5.000,00</button>
+                            <button value="10000" class="botao" onclick="irParaFormularioSuperior(value)">R$ 10.000,00</button>
+                            <button value="15000" class="botao" onclick="irParaFormularioSuperior(value)">R$ 15.000,00</button>
+                            <button value="0" class="botao" onclick="irParaFormularioSuperior(value)">Outro Valor</button>
+                        </nav>
+                    </div>
+                </section>
+
+                <section id="sec-01-div02" class="sec-01-divclass-hidden">
+                    <div class="sec-01-divclass-div02-show-header">
+                        <h3>
+                            Preencha as informações abaixo
+                        </h3>
+                    </div>
+
+                    <div class="sec-01-divclass-div02-show-form">
+                        <form action="/form1" method="POST">
+                            <div>
+                                <label for="idF1Name">Nome</label>
+                                <input type="text" class="float-left input-class" name="nF1Name" id="idF1Name" placeholder="Informe seu nome" required>
+                            </div>
+                            <div>
+                                <label for="idF1RazaoSocial"> Razão social</label>
+                                <input type="text" class="float-right input-class" name="nF1RazaoSocial" id="idF1RazaoSocial" placeholder="Razão social da empresa" required>
+                            </div>
+                            <div>
+                                <label for="idF1Mail">Email</label>
+                                <input type="email" class="float-left input-class" name="nF1Mail" id="idF1Mail" placeholder="Seu melhor email" required>
+                            </div>
+                            <div>
+                                <label for="idF1CNPJ">CNPJ</label>
+                                <input type="text" class="float-right input-class" name="nF1CNPJ" id="idF1CNPJ" placeholder="CNPJ da empresa" required>
+                            </div>
+                            <div>
+                                <label for="idF1Fone">Telefone</label>
+                                <input type="tel" class="float-left input-class" name="nF1Fone" id="idF1Fone" placeholder="Telefone principal" maxlength="15">
+                            </div>
+                            <div>
+                                <label for="idF1Value">Valor do empréstimo</label>
+                                <input type="number" class="float-right input-class" name="nF1Value" id="idF1Value" placeholder="Valor do empréstimo">
+                            </div>
+                            <div>
+                                <label for="idF1City"></label>
+                                <select class="float-left input-class" name="nF1City" id="idF1City" pl required>
+                                    <option value="" disabled selected>Qual sua cidade?</option>
+                                    <option value="São Paulo – Capital">São Paulo – Capital</option>
+                                    <option value="Caieiras">Caieiras</option>
+                                    <option value="Cajamar">Cajamar</option>
+                                    <option value="Cotia">Cotia</option>
+                                    <option value="Diadema">Diadema</option>
+                                    <option value="Embu">Embu</option>
+                                    <option value="Embu-Guaçu">Embu-Guaçu</option>
+                                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                                    <option value="Guarulhos">Guarulhos</option>
+                                    <option value="Itapecerica da Serra">Itapecerica da Serra</option>
+                                    <option value="Itaquaquecetuba">Itaquaquecetuba</option>
+                                    <option value="Juquitiba">Juquitiba</option>
+                                    <option value="Mairiporã">Mairiporã</option>
+                                    <option value="Mauá">Mauá</option>
+                                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                                    <option value="Osasco">Osasco</option>
+                                    <option value="Poá">Poá</option>
+                                    <option value="Santa Isabel">Santa Isabel</option>
+                                    <option value="Santana de Parnaíba">Santana de Parnaíba</option>
+                                    <option value="Santo André">Santo André</option>
+                                    <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                                    <option value="São Caetano do Sul">São Caetano do Sul</option>
+                                    <option value="Taboão da Serra">Taboão da Serra</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input class="botao float-right" type="submit" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </article>
+
+        <article id="section-02">
+            <section id="section-02-upper">
+                <div id="section-02-upper-center">
+                    <div class="display-inline-container">
+                        <div class="display-inline-img">
+                            <figure class="image-container">
+                                <div class="image"><img src="img/im_1.png" alt="" class="img-class"></div>
+                                <div class="purple-square"><img src="img/purple_square.png" alt=""></div>
+                                <div class="green-square"><img src="img/green_square.png" alt=""></div>
+                            </figure>
+                        </div>
+                        <div class="display-inline">
+                                <h2 class="h2-common">Finanças</h2>
+                                <h3 class="h3-common">somos a <em class="emphasiz">Cred4</em><img src="img/" alt=""><img src="img/arrow_purple.png" alt="" class="arrow"></h3>
+                                <p>Acreditamos no empreendedorismo brasileiro. Assim como você, nós também somos empreendedores, e conhecemos todas as dificuldades que permeiam este meio.   </p>
+                                <p>Por isso, ao contrário de bancos e fintechs, onde as tratativas são burocráticas e as chances de aprovação são mínimas, nós oferecemos acesso ao crédito para MEI, ME e EPP´s, de forma clara, transparente e sem letras miúdas.</p>
+                                <p><em>Ao contratar a Cred4, você sabe exatamente o que vai pagar por mês, até o fim do contrato.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-02-bottom">
+                <div id="section-02-bottom-center">
+                    <div id="section-02-bottom-center-header">
+                        <div class="division-div"></div>
+                        <h2 class="h2-common">Crédito para ajudar o seu negócio a crescer</h2>
+                        <h3  class="h3-common">por que pedir <em class="emphasiz">crédito</em> para a sua empresa?</h3>
+                    </div>
+    
+                    <div class="flex-container">
+    
+                        <div class="flex-item">
+                            <div class="flex-item-inside">
+                                <h3>Capital de Giro</h3>
+                                <p>Se sua empresa precisa de um respiro para movimentar suas atividades, solicite um crédito para manter a saúde financeira de sua empresa.</p>
+                            </div>
+                        </div>
+    
+                        <div class="flex-item">
+                            <div class="flex-item-inside">
+                                <h3>Ajuda nas Contas</h3>
+                                <p>Existem épocas em que as contas são mais pesadas, como férias e 13º dos funcionários por exemplo, um empréstimo planejado é uma excelente solução.</p>
+                            </div>
+                        </div>
+    
+                        <div class="flex-item">
+                            <div class="flex-item-inside">
+                                <h3>E mais...</h3>
+                                <p>Reformas, expansão, compra de material e equipamentos, estoque e o que mais sua empresa precisar.</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <article id="section-03">
+                <div id="section-03-center-upper">
+                    <div class="division-div"></div>
+                  
+                    <section id="faq-div">
+                        <h3>perguntas frequentes</h3>
+                        <p>Ficou com alguma dúvida sobre os nossos serviços?</p>
+                        <p>Confira algumas perguntas frequentes que podem te ajudar! Se a sua dúvida não tiver sido respondida neste item, nos contate no campo abaixo! Teremos prazer em ajudar e a esclarecer os seus questionamentos.</p>
+                        <div id="section-03-center-upper-faq">
+                            <div id="faq-div-1" onclick="abrirItemPerguntasFrequentes(id)" class="class-faq-div">
+                                <img src="img/arrow.svg" alt="" class="class-arrow-faq">
+                                <h2 class="h2-common">A Cred4 é uma ESC, mas o que é uma ESC?</h2>
+                                <p>ESC é a sigla que identifica a Empresa Simples de Crédito. O objetivo da ESC é oferecer aos microempreendedores individuais e às micro e pequenas empresas uma alternativa de crédito mais barata e de fácil acesso.</p>
+                            </div>
+                            <div id="faq-div-2" onclick="abrirItemPerguntasFrequentes(id)" class="class-faq-div">
+                                <img src="img/arrow.svg" alt="" class="class-arrow-faq">
+                                <h2 class="h2-common">A ESC possui previsão legal?</h2>
+                                <p>Sim. A ESC foi criada através da Lei Complementar nº167 de 24/04/2019.</p>
+                            </div>
+                            <div id="faq-div-3" onclick="abrirItemPerguntasFrequentes(id)" class="class-faq-div">
+                                <img src="img/arrow.svg" alt="" class="class-arrow-faq">
+                                <h2 class="h2-common">Quais as atividades da Cred4? A quem se destina? Onde pode atuar?</h2>
+                                <p>As atividades da Cred4 restringem-se à realização de empréstimos, financiamentos e descontos de títulos de créditos. Apenas os microempreendedores individuais (MEI), microempresas (ME) e empresas de pequeno porte (EPP), com conta corrente em nome da empresa, podem ser clientes da Cred4. A Cred4 só pode atuar no município de São Paulo - SP e municípios limítrofes.</p>
+                            </div>
+                            <div id="faq-div-4" onclick="abrirItemPerguntasFrequentes(id)" class="class-faq-div">
+                                <img src="img/arrow.svg" alt="" class="class-arrow-faq">
+                                <h2 class="h2-common">Como posso solicitar um empréstimo?</h2>
+                                <p>É muito simples, você precisa apenas entrar em contato conosco solicitando o valor desejado. Rapidamente retornaremos para te pedir mais informações e fechar o negócio. Para concluir precisamos apenas de um avalista e assinar o contrato. Você recebera todos os documentos e o dinheiro cai na conta no dia de início do contrato.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="section-03-center-bottom">
+                    <div class="display-inline-container">
+                        <div class="display-inline-img">
+                            <figure class="image-container">
+                                <div class="image"><img src="img/im_2.png" alt="" class="img-class"></div>
+                                <div class="purple-square"><img src="img/purple_square.png" alt=""></div>
+                                <div class="green-square"><img src="img/green_square.png" alt=""></div>
+                            </figure>
+                        </div>
+    
+                        <div class="display-inline">
+                            <section id="fale-conosco">
+                                <h2 class="h2-common">Ainda com dúvidas?</h2>
+                                <h3 class="h3-common">fale <em class="emphasiz">conosco</em><img src="img/arrow_green.png" alt="" class="arrow"></h3>
+                                <form id="formulario_footer" action="#" method="POST" class="flex-form">
+                                    <div class="flex-form-item">
+                                        <label for="nome" class="label-class">Nome Completo</label>
+                                        <input class="input-class" type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+                                    </div>
+                                    <div class="flex-form-item">
+                                        <label for="email" class="label-class">Seu email</label>
+                                        <input class="input-class" type="email" name="email" id="email" placeholder="Seu email" required>
+                                    </div>
+                                    <div class="flex-form-item">
+                                        <label for="telefone" class="label-class">Telefone / Celular</label>
+                                        <input class="input-class" type="tel" name="telefone" id="telefone" placeholder="Telefone / Celular" required>
+                                    </div>
+                                    <div class="flex-form-item">
+                                        <label for="mensagem" class="label-class">Tire suas dúvidas</label>
+                                        <textarea class="input-class-txt" maxlength="500" name="mensagem" id="mensagem" placeholder="Escreva sua pergunta"></textarea>
+                                    </div>
+                                    <div class="flex-form-item">
+                                        <div id="form-div-1">
+                                            <input type="checkbox" name="receberMailing" id="receberMailing" checked>
+                                            <label for="receberMailing">Deseja receber informações no email?</label>
+                                        </div>
+                                        <div id="form-div-2">
+                                            <input class="botao" type="submit" value="Enviar">
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+        </article>
+    </main>
+    
+    <footer id="footer">
+
+        <article class="footer-upper-container">  
+            <figure class="footer-upper-item">
+                <img src="img/logo_footer.svg" alt="" id="logo-footer">
+            </figure>
+            <section class="footer-upper-item">
+                <h3><em class="emphasiz">sobre a Cred4</em></h3>
+                <nav>
+                    <ul>
+                        <li><a href="#section-01">Home</a></li>
+                        <li><a href="#quem-somos">Quem Somos</a></li>
+                        <li><a href="#para-sua-empresa">Para Sua Empresa</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="">Blog</a></li>
+                    </ul>
+                </nav>
+            </section>
+          
+            <section class="footer-upper-item">
+                <h3><em class="emphasiz">contato</em></h3>
+                <nav>
+                    <ul>
+                        <li><a href="tel:+551130901240">Telefone: (11) 3090-1240</a></li>
+                        <li><a href="mailto:credito@cred4.com.br">credito@cred4.com.br</a></li>
+                        <li><a href="https://www.google.com/maps/place/Av.+Dr.+Ricardo+Jafet,+250+-+4+-+Ipiranga,+S%C3%A3o+Paulo+-+SP,+04260-000/@-23.5799728,-46.6153225,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce5bdfe7b37c5d:0x55a65cbd65496c5f!8m2!3d-23.5799728!4d-46.6131338" target="_blank">Avenida Doutor Ricardo Jafet, 250 - Sala 4 - Ipiranga, São Paulo - SP</a></li>
+                        <li><a href="https://www.instagram.com/cred4_simples/" target="_blank"><img src="/img/inst.png" alt="Instagram" id="instagram"></a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="footer-upper-item">
+                <h3><em class="emphasiz">informações</em></h3>
+                <nav>
+                    <ul>
+                        <li><a href="">Solicitar Empréstimo</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </article>
+
+        <article id="footer-bottom">
+            <p>Cred4.com.br pertence à Cred4 Empresa Simples de Crédito Ltda. ("Cred4"), CNPJ 35.309.969/0001-23, com sede na Avenida Doutor Ricardo Jafet, 250, Sala 4, Ipiranga, São Paulo, SP, CEP: 04260-000. A Cred4 não é um banco e sim uma Empresa Simples de Crédito nos termos da Lei Complementar nº167, de 24 de abril de 2019. As atividades de uma ESC restringem-se à realização de empréstimo, financiamentos e descontos de títulos de créditos, destinados apenas a microempreendedores individuais, microempresas e empresas de pequeno porte, limitado ao município de sua sede e cidades limítrofes.</p>
+            <h4>Copyright &copyCRED4. Todos os Direitos Reservados.</h4>
+            <p id="signature">_bdpc_</p>
+        </article>
+
+    </footer>
+
+    <script src="script/script.js"></script>
+    <!--<script src="src/app.js"></script>-->
+
+</body>
+</html>
