@@ -11,5 +11,5 @@ This is my repository to share stuff.
 
 ### [Snake Game](https://snake-game-ecru.vercel.app/)
 
-### [To do app](https://snake-game-ecru.vercel.app/)
+### [To do app](https://to-do-app-brown.vercel.app/)
 
