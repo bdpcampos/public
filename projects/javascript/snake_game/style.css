@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.inline {
+    display: inline-block;
+}
+
 #canvas {
     background-color: #cccccc;
     border: 3px solid;
@@ -16,22 +20,32 @@
 }
 
 #container {
-    position: absolute;
-    display: flex;
-    flex-flow: row wrap;
+    position: relative;
+    top:-200px;
+    left:-30px;
+    width: 300px;
+    height: 600px;
+    flex-flow: column wrap;
     align-items: center;
-    justify-content: space-between;
     padding: 10px;
+    align-items: left;
 }
 
 button {
     padding: 10px;
-    margin: 10px;
+    margin: 30px;
 }
 
 #score, #high-score {
     font-size: 20px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 30px;
 }
     
+img {
+    position: relative;
+    left: -350px;
+    top:20px;
+}
