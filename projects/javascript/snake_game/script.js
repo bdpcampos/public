@@ -1,21 +1,36 @@
 
-function drawGreenSquare(x,y) {
+function drawSquare(x,y,color) {
 
-    brush.fillStyle = 'green';
+    brush.fillStyle = color;
     brush.fillRect(x,y,squareSize,squareSize);
     brush.fillStroke = 'black';
     brush.strokeRect(x,y,squareSize,squareSize);
 }
 
 function drawScreen() {
+
+    if(hittedProhibitedSpace()) {
+        stopGame();
+        alert("You Lost !!!")
+        return;
+    }
+
+    if(hittedApple()){
+        generateAppleCoordinates();
+        increaseSnake()
+    }
+
     brush.clearRect(0, 0, 600, 600)
 
     arrayX.push(posX);
     arrayY.push(posY);
 
+    drawSquare(posXApple, posYApple, 'red');//Draw apple in current position
+
     for (let i = 0; i < snakeSize; i++){
-        drawGreenSquare(arrayX[i], arrayY[i]);
+        drawSquare(arrayX[i], arrayY[i], 'green'); //Draw snake in current position
     }
+
 
     if(arrayX.length > snakeSize){
         arrayX.shift();
@@ -39,11 +54,7 @@ function drawScreen() {
             posX += squareSize;
             break;
     }
-    console.log(posX, posY);
-    if(hittedProhibitedSpace()) {
-        stopGame();
-        alert("You Lost !!!")
-    }
+
 }
 
 function moveDirectionInput(object) {
@@ -57,21 +68,31 @@ function increaseSnake() {
     snakeSize++;
 }
 
+function generateAppleCoordinates() {
+   posXApple = Math.floor(Math.random() * ((575 / squareSize) + 1)) * squareSize; //Returns only coordinates that matches snake positions
+   posYApple = Math.floor(Math.random() * ((575 / squareSize) + 1)) * squareSize;    
+}
+
 function hittedProhibitedSpace() {
     let booleanVariable = false;
-    const posXOnArrayX = arrayX.indexOf(posX)
-    const posYOnArrayY = arrayY.indexOf(posY)
 
 
-    if(posXOnArrayX >= 0 && posYOnArrayY >= 0 && posXOnArrayX === posYOnArrayY) {
-        booleanVariable = true;
-    }
+    //Need to implement hit itself failure code
 
-    if(posX < -25 - squareSize || posX > 600 + squareSize || posY < -25 - squareSize || posY > 600 + squareSize ) {
+
+    if(posX < -25 || posX > 600 || posY < -25 || posY > 600 ) {
         booleanVariable = true;
     }
 
     return booleanVariable;
+}
+
+function hittedApple() {
+    let booleanVariable = false;
+
+    if(posX === posXApple && posY === posYApple) {
+        return booleanVariable = true;
+    }
 }
 
 
@@ -85,13 +106,14 @@ function stopGame() {
 }
 
 function newGame() {
-    snakeSize = 10;
+    snakeSize = 3;
     moveDirection = 'right';
     posX = 275;
     posY = 275;
     arrayX = [];
     arrayY = [];
     startGame();
+    generateAppleCoordinates();
 }
 
 
@@ -108,11 +130,12 @@ let posY = 275;
 let arrayX = [];
 let arrayY = [];
 
+let posXApple;
+let posYApple;
+
 document.addEventListener('keydown', moveDirectionInput);
 document.querySelector('#stop').addEventListener('click', stopGame)
 document.querySelector('#new').addEventListener('click', newGame)
-
-
 
 
 

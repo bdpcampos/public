@@ -1,8 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #canvas {
     background-color: #cccccc;
     border: 3px solid;
     width: 600px;
     height: 600px;
+    margin: 25px;
 }
 
 #arrow {
