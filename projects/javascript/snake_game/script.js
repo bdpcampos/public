@@ -66,6 +66,7 @@ function moveDirectionInput(object) {
 
 function increaseSnake() {
     snakeSize++;
+    showScore();
 }
 
 function generateAppleCoordinates() {
@@ -95,10 +96,15 @@ function hittedApple() {
     }
 }
 
+function showScore() {
+    const scoreValue = snakeSize - snakeInicialSize;
+    score.innerHTML = `<p>Score: ${scoreValue}</p>`
+}
+
 
 
 function startGame() {
-    screenInterval = setInterval(drawScreen, 200);
+    screenInterval = setInterval(drawScreen, 150);
 }
 
 function stopGame() {
@@ -106,7 +112,7 @@ function stopGame() {
 }
 
 function newGame() {
-    snakeSize = 3;
+    snakeSize = snakeInicialSize;
     moveDirection = 'right';
     posX = 275;
     posY = 275;
@@ -114,14 +120,17 @@ function newGame() {
     arrayY = [];
     startGame();
     generateAppleCoordinates();
+    showScore()
 }
 
 
 const screen = document.querySelector('canvas');
+const score = document.querySelector("#score");
 let brush = screen.getContext('2d');
 const squareSize = 25;
 let snakeSize;
 let screenInterval;
+let snakeInicialSize = 3;
 
 let moveDirection = 'right';
 let posX = 275;
