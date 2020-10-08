@@ -17,7 +17,8 @@ function drawScreen() {
 
     if(hittedApple()){
         generateAppleCoordinates();
-        increaseSnake()
+        increaseSnake();
+        saveHighScore();
     }
 
     brush.clearRect(0, 0, 600, 600)
@@ -97,11 +98,18 @@ function hittedApple() {
 }
 
 function showScore() {
-    const scoreValue = snakeSize - snakeInicialSize;
+    scoreValue = snakeSize - snakeInicialSize;
     score.innerHTML = `<p>Score: ${scoreValue}</p>`
 }
 
-
+function saveHighScore(){
+    if(scoreValue > highScoreValue){
+        localStorage.highScoreValue = JSON.stringify(scoreValue);
+        highScoreValue = scoreValue;
+        highScore.innerHTML = `<p>High Score: ${highScoreValue}</p>`;
+    }
+    
+}
 
 function startGame() {
     screenInterval = setInterval(drawScreen, 150);
@@ -126,11 +134,14 @@ function newGame() {
 
 const screen = document.querySelector('canvas');
 const score = document.querySelector("#score");
+const highScore = document.querySelector("#high-score");
 let brush = screen.getContext('2d');
 const squareSize = 25;
 let snakeSize;
 let screenInterval;
 let snakeInicialSize = 3;
+let scoreValue;
+let highScoreValue;
 
 let moveDirection = 'right';
 let posX = 275;
@@ -145,6 +156,15 @@ let posYApple;
 document.addEventListener('keydown', moveDirectionInput);
 document.querySelector('#stop').addEventListener('click', stopGame)
 document.querySelector('#new').addEventListener('click', newGame)
+
+
+if(localStorage.highScoreValue){
+    highScoreValue = JSON.parse(localStorage.highScoreValue);
+} else{
+    highScoreValue = 0;
+}
+
+highScore.innerHTML = `<p>High Score: ${highScoreValue}</p>`
 
 
 
