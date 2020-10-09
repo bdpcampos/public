@@ -1,5 +1,6 @@
+//Functions
 
-function drawSquare(x,y,color) {
+function drawSquare(x,y,color) {   //Draws snake building block
 
     brush.fillStyle = color;
     brush.fillRect(x,y,squareSize,squareSize);
@@ -7,23 +8,24 @@ function drawSquare(x,y,color) {
     brush.strokeRect(x,y,squareSize,squareSize);
 }
 
-function drawScreen() {
 
-    if(hittedProhibitedSpace()) {
+function drawScreen() {   //Main function --> Redraws the screen in each refresh
+
+    if(hittedProhibitedSpace()) {  //If hitted prohibited space --> Borders or itself --> Game failure events
         stopGame();
-        alert("You Lost !!!")
+        alert("*** BUSTED ***")
         return;
     }
 
-    if(hittedApple()){
+    if(hittedApple()){         //If hitted apple --> Scores points and stores them
         generateAppleCoordinates();
         increaseSnake();
         saveHighScore();
     }
 
-    brush.clearRect(0, 0, 600, 600)
+    brush.clearRect(0, 0, canvasSize, canvasSize)  //Clears screen for a new draw event
 
-    arrayX.push(posX);
+    arrayX.push(posX); //Push new coordinates to snake array
     arrayY.push(posY);
 
     drawSquare(posXApple, posYApple, 'red');//Draw apple in current position
@@ -33,12 +35,14 @@ function drawScreen() {
     }
 
 
-    if(arrayX.length > snakeSize){
+    if(arrayX.length > snakeSize){   // Eliminates snake tail to maintain snake size at refresh
+
         arrayX.shift();
         arrayY.shift();
     }
 
-    switch (moveDirection) {
+    switch (moveDirection) { // Changes the move direction of the snake for the next refresh
+
         case 'up':
             posY -= squareSize;
             break;
@@ -58,52 +62,69 @@ function drawScreen() {
 
 }
 
-function moveDirectionInput(object) {
+
+function moveDirectionInput(object) {                          // Maps keyboard arrow to set snake direction
+
     if(object.keyCode == '38') { moveDirection = 'up'; }
     if(object.keyCode == '40') { moveDirection = 'down'; }
     if(object.keyCode == '37') { moveDirection = 'left'; }
     if(object.keyCode == "39") { moveDirection = 'right'; }
 }
 
-function increaseSnake() {
+
+function increaseSnake() {  //Function triggered when snake hits and apple --> Snake grows by one and player scores a point
+
     snakeSize++;
     showScore();
 }
 
-function generateAppleCoordinates() {
-   posXApple = Math.floor(Math.random() * ((575 / squareSize) + 1)) * squareSize; //Returns only coordinates that matches snake positions
-   posYApple = Math.floor(Math.random() * ((575 / squareSize) + 1)) * squareSize;    
+
+function generateAppleCoordinates() {  //Generates random cordinates for apple --> WIP apple still appears inside snake :D
+
+   posXApple = Math.floor(Math.random() * (((canvasSize - squareSize) / squareSize) + 1)) * squareSize; //Returns only coordinates that matches snake positions
+   posYApple = Math.floor(Math.random() * (((canvasSize - squareSize) / squareSize) + 1)) * squareSize;    
 }
 
-function hittedProhibitedSpace() {
+
+function hittedProhibitedSpace() {  //Function that defines prohibited spaces --> Failure indicator
+
     let booleanVariable = false;
 
 
-    //Need to implement hit itself failure code
+    //Need to implement hit itself failure code | WIP
 
 
-    if(posX < -25 || posX > 600 || posY < -25 || posY > 600 ) {
+    if((posX < 0 - screen.offsetLeft) || posX > canvasSize || (posY < 0 - screen.offsetTop) || posY > canvasSize ) {  // Failure when snake hit borders
+
         booleanVariable = true;
     }
 
     return booleanVariable;
 }
 
-function hittedApple() {
+
+function hittedApple() {  //Function that defines when snake hits an apple
+
     let booleanVariable = false;
 
     if(posX === posXApple && posY === posYApple) {
+        
         return booleanVariable = true;
     }
 }
 
-function showScore() {
+
+function showScore() { //Defines actual player score
+
     scoreValue = snakeSize - snakeInicialSize;
     score.innerHTML = `<p>Score: ${scoreValue}</p>`
 }
 
-function saveHighScore(){
+
+function saveHighScore(){              //Saves high score to local storage on client machine
+
     if(scoreValue > highScoreValue){
+
         localStorage.highScoreValue = JSON.stringify(scoreValue);
         highScoreValue = scoreValue;
         highScore.innerHTML = `<p>High Score: ${highScoreValue}</p>`;
@@ -111,18 +132,22 @@ function saveHighScore(){
     
 }
 
+
 function startGame() {
-    screenInterval = setInterval(drawScreen, 150);
+
+    screenInterval = setInterval(drawScreen, 150); //Game pace interval in milliseconds
 }
 
 function stopGame() {
+
     clearInterval(screenInterval);
 }
 
-function newGame() {
+function newGame() {   //Sets initial values for the game
+
     snakeSize = snakeInicialSize;
     moveDirection = 'right';
-    posX = 275;
+    posX = 275; //Initial position that worked :D
     posY = 275;
     arrayX = [];
     arrayY = [];
@@ -132,11 +157,16 @@ function newGame() {
 }
 
 
+//Variables declaration
+
 const screen = document.querySelector('canvas');
 const score = document.querySelector("#score");
 const highScore = document.querySelector("#high-score");
+
 let brush = screen.getContext('2d');
 const squareSize = 25;
+const canvasSize = 600;
+
 let snakeSize;
 let screenInterval;
 let snakeInicialSize = 3;
@@ -153,23 +183,22 @@ let arrayY = [];
 let posXApple;
 let posYApple;
 
+
+//Event Listeners Setters
+
 document.addEventListener('keydown', moveDirectionInput);
 document.querySelector('#stop').addEventListener('click', stopGame)
 document.querySelector('#new').addEventListener('click', newGame)
 
 
-if(localStorage.highScoreValue){
+//Code
+
+if(localStorage.highScoreValue){            //Retrieves high score from local storage on client machine
+
     highScoreValue = JSON.parse(localStorage.highScoreValue);
 } else{
+    
     highScoreValue = 0;
 }
 
-highScore.innerHTML = `<p>High Score: ${highScoreValue}</p>`
-
-
-
-
-
-
-
-
+highScore.innerHTML = `<p>High Score: ${highScoreValue}</p>` //Shows high score on screen
