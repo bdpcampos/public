@@ -7,9 +7,9 @@ This is my repository to share stuff.
 
 ## **Projects**
 
-### [Financial Website](https://financial-website.vercel.app/)
+### [Financial Website](https://financial-website.vercel.app/)  WIP
 
-### [Snake Game](https://snake-game-ecru.vercel.app/)
+### [Snake Game](https://snake-game-ecru.vercel.app/)  WIP
 
 ### [To do app](https://to-do-app-brown.vercel.app/)
 
