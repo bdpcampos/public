@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.inline {
+    display: inline-block;
+}
+
+#canvas {
+    background-color: #000000;
+    width: 600px;
+    height: 400px;
+    margin: 25px;
+}
+
+#score {
+    position: absolute;
+    top: 30px;
+    left: 210px;
+    color: #ffffff;
+    font-size: 100px;
+}

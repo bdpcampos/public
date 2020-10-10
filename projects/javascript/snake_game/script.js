@@ -147,8 +147,8 @@ function newGame() {   //Sets initial values for the game
 
     snakeSize = snakeInicialSize;
     moveDirection = 'right';
-    posX = 275; //Initial position that worked :D
-    posY = 275;
+    posX = canvasSize / 2;  //Initial position
+    posY = canvasSize / 2;
     arrayX = [];
     arrayY = [];
     startGame();
@@ -165,17 +165,17 @@ const highScore = document.querySelector("#high-score");
 
 let brush = screen.getContext('2d');
 const squareSize = 25;
-const canvasSize = 600;
+const canvasSize = screen.getBoundingClientRect().width; //width === height
 
 let snakeSize;
 let screenInterval;
-let snakeInicialSize = 3;
+const snakeInicialSize = 3;
 let scoreValue;
 let highScoreValue;
 
 let moveDirection = 'right';
-let posX = 275;
-let posY = 275;
+let posX = canvasSize / 2;  //Initial position
+let posY = canvasSize / 2;
 
 let arrayX = [];
 let arrayY = [];
