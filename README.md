@@ -7,14 +7,17 @@ This is my repository to share stuff.
 
 ## **Projects**
 
-### [Financial Website](https://financial-website.vercel.app/)    wip
-
+### [Financial Website](https://financial-website.vercel.app/)    
+    wip
+    
 ### [To do app](https://to-do-app-omega.vercel.app/)
 
-### [Snake Game](https://snake-game-eight.vercel.app/)    wip
+### [Snake Game](https://snake-game-eight.vercel.app/)  
 
-### [Pong](https://pong-ten.vercel.app/)    wip
-
+    wip
+    
+### [Pong](https://pong-ten.vercel.app/)    
+    wip
 
 
 
