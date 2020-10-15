@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Header styles*/
+
+.header {
+    background:#BBBBBB;
+    padding: 2% 0;
+}
+
+.nav-menu {
+    width:70%;
+    margin:0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-menu {
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    margin:10px;
+}
+
+.nav-menu a:hover {
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+.nav-menu a:active {
+    color: #088C19;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .nav-menu{
+        flex-flow: column wrap;
+    }
+
+    .nav-menu img{
+        max-height: 200px;
+    }
+}
+
+
+/* Main-Produtos styles*/
+
+main {
+    width:80%;
+    margin:0 auto;
+}
+
+.box-container {
+    padding: 50px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box {
+    text-align:center;
+    width: 310px;
+    margin: 10px;
+    padding: 30px;
+    border: 3px solid;
+    border-radius: 20px;
+}
+
+.box:hover {
+    border-color: #C78C19;
+}
+
+.box:hover h2 {
+    font-size:45px;
+}
+
+.box:active {
+    border-color: #088C19;
+}
+
+.box h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.descricao {
+    font-size: 18px;
+    margin: 20px;
+}
+
+.preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+
+/* Main-Contato styles*/
+
+form {
+    margin: 40px 0;
+    font-weight: normal;
+}
+
+form label {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 20px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px;
+    width: 50%;
+    font-size: 20px;
+}
+
+form legend {
+    font-size: 20px;
+    margin:40px 0 20px 0;
+}
+
+.checkbox {
+    margin: 40px 0;
+}
+
+.enviar {
+    margin: 0 0 20px;
+    padding: 10px;
+    width: 40%;
+    font-size: 20px;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border:none;
+    border-radius: 5px;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: darkorange;
+    transform: rotate(20deg) scale(1.2);
+}
+
+table {
+    margin: 20px 0 40px 0;
+}
+
+thead {
+    background-color:#555555;
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 8px 15px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    form label {
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    form input, form textarea, form legend, .input-padrao {
+        margin: 20px auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .enviar {
+        margin: 20px auto;
+        width: 90%;
+    }
+}
+
+
+/* Footer styles*/
+
+footer {
+    text-align: center;
+    background: url(../img/bg.jpg);
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #ffffff;
+    font-size: 15px;
+    margin: 20px 0 0 0;
+}
