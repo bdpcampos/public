@@ -9,9 +9,16 @@ function adicionarPaciente(event) {
 
     const novaTr = criaTr(paciente)
 
-    linha.appendChild(novaTr);
+    if(validaPaciente(paciente)){
+        tabelaPacientes.appendChild(novaTr);
+        form.reset();
+    }
 
     valoresInvalidos(novaTr);
+
+    novaTr.querySelector('.delete').addEventListener("click", removerPaciente, false);
+    novaTr.querySelector('.delete').addEventListener("mouseover", mouseOverDelete, false);
+    novaTr.querySelector('.delete').addEventListener("mouseout", mouseOutDelete, false);
 
 }
 
@@ -34,16 +41,6 @@ function preCalcularImc(item) {
     imc.textContent = calcularImc(peso, altura);
 
     valoresInvalidos(item);
-}
-
-
-function pesoIsValid(peso) {
-    return (peso > 0 && peso < 1000);
-}
-
-
-function alturaIsValid(altura) {
-    return (altura > 0 && altura < 3);
 }
 
 
@@ -80,10 +77,10 @@ function criaTr(object) {
     novaLinha.appendChild(criaTd(object.altura, "info-altura"));
     novaLinha.appendChild(criaTd(object.gordura, "info-gordura"));
     novaLinha.appendChild(criaTd(object.imc, "info-imc"));
+    novaLinha.appendChild(criaTd("X", "delete"));
 
     return novaLinha;
 }
-
 
 function criaTd(dado, classe) {
     const td = document.createElement('TD');
@@ -92,3 +89,64 @@ function criaTd(dado, classe) {
 
     return td;
 }
+
+function validaPaciente(paciente) {
+
+    mensagensErro = [];
+
+    erroContainer.innerHTML = "";
+
+    let returnVar = true
+
+    if(paciente.nome === "") {
+        mensagensErro.push('Paciente sem nome!');
+        returnVar = false;
+    }
+    if(paciente.peso === "") {
+        mensagensErro.push('Paciente sem peso!');
+        returnVar = false;
+    }
+    if(paciente.altura === "") {
+        mensagensErro.push('Paciente sem altura!');
+        returnVar = false;
+    }
+    if(paciente.gordura === "") {
+        mensagensErro.push('Paciente sem gordura corporal!');
+        returnVar = false;
+    }
+    if(!pesoIsValid(paciente.peso) && paciente.peso !== "") {
+        mensagensErro.push('Paciente com peso Inválido!');
+        returnVar = false;
+    }
+    if(!alturaIsValid(paciente.altura) && paciente.altura !== "") {
+        mensagensErro.push('Paciente com altura Inválida!')
+        returnVar = false;
+    }
+
+    mensagensErro.forEach(montaMensagemErro);
+
+    return returnVar
+}
+
+function pesoIsValid(peso) {
+    return ((peso > 0 && peso < 1000));
+}
+
+function alturaIsValid(altura) {
+    return (altura > 0 && altura < 3);
+}
+
+function montaMensagemErro(item) {
+    const li = document.createElement('li');
+    li.textContent = item;
+    erroContainer.appendChild(li);
+}
+
+
+
+const tabelaPacientes = document.querySelector('#tabela-pacientes');
+let pacientes = document.querySelectorAll('.paciente');
+const button = document.querySelector(".button");
+const erroContainer = document.querySelector('#mensagem-erro');
+
+let mensagensErro = [];
