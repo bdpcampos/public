@@ -18,6 +18,10 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
+				<div>
+					<label for="filtrar-tabela">Filtre:</label>
+					<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+				</div>
 				<table>
 					<thead>
 						<tr>
@@ -74,6 +78,9 @@
 						</tr>
 					</tbody>
 				</table>
+
+				<button class="button-buscar">buscar paciente</button>
+
 				<ul id="mensagem-erro">
 				</ul>
 				<form id="form-cadastro">
@@ -89,7 +96,9 @@
 		</main>
 
 	<script src="../js/form.js"></script>
+	<script src="../js/filtra.js"></script>
 	<script src="../js/remover-paciente.js"></script>
+	<script src="../js/buscar-pacientes.js"></script>
 	<script src="../js/main.js"></script>
 	
 	</body>

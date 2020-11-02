@@ -7,7 +7,15 @@ function adicionarPaciente(event) {
 
     const paciente = criaPaciente(form);
 
-    const novaTr = criaTr(paciente)
+    adicionarPacienteNaTabela(paciente);
+
+}
+
+function adicionarPacienteNaTabela(paciente) {
+
+    const form = document.querySelector('#form-cadastro');
+
+    const novaTr = criaTr(paciente);
 
     if(validaPaciente(paciente)){
         tabelaPacientes.appendChild(novaTr);
@@ -19,9 +27,7 @@ function adicionarPaciente(event) {
     novaTr.querySelector('.delete').addEventListener("click", removerPaciente, false);
     novaTr.querySelector('.delete').addEventListener("mouseover", mouseOverDelete, false);
     novaTr.querySelector('.delete').addEventListener("mouseout", mouseOutDelete, false);
-
 }
-
 
 function calcularImc(peso, altura) {
 
