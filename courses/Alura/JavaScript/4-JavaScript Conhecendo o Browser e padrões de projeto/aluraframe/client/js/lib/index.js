@@ -1,6 +1,7 @@
 /* Import module declarations */
 
-import *  as Date from '../lib/date.js';
+import *  as DateLib from './date.js';
+import { Negociacao } from '../app/models/Negociacao.js';
 
 
 
@@ -25,7 +26,7 @@ document.querySelector('.form').addEventListener('submit', function (event) {
 
     event.preventDefault(); //Stop refreshing page after submit.
 
-    if (!Date.isDateFuture(formInputs[0].value)) {
+    if (!DateLib.isDateFuture(formInputs[0].value)) {
         const tr = document.createElement('tr');
 
         formInputs.forEach(function (input) {
@@ -46,7 +47,7 @@ document.querySelector('.form').addEventListener('submit', function (event) {
         alert("A data não pode ser maior do que hoje!")
     }
 
-    Date.setTodayDate('#data') //Date input value goes back to today date.
+    DateLib.setTodayDate('#data') //Date input value goes back to today date.
     formInputs[0].focus();
     formInputs[1].value = 1;
     formInputs[2].value = 0.00;
@@ -56,4 +57,12 @@ document.querySelector('.form').addEventListener('submit', function (event) {
 
 /* Main code */
 
-Date.setTodayDate('#data'); //Sets date input to today date.
+DateLib.setTodayDate('#data'); //Sets date input to today date.
+
+const n1 = new Negociacao(new Date(), 10, 30);
+
+console.log(n1.data)
+
+n1.data.setDate(11);
+
+console.log(n1.data)
