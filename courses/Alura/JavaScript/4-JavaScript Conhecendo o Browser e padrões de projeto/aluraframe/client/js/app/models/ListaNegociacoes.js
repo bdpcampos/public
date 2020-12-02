@@ -1,8 +1,5 @@
 /*  Import declaration  */
 
-import { Negociacao } from "../models/Negociacao.js"
-import { DateHelper } from "../helpers/DateHelper.js"
-
 
 /*  Class declaration  */
 

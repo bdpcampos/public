@@ -2,6 +2,8 @@
 
 import { Negociacao } from "../models/Negociacao.js"
 import { ListaNegociacoes } from "../models/ListaNegociacoes.js"
+import { NegociacoesView } from "../views/NegociacoesView.js"
+import { AlertaView } from "../views/AlertaView.js"
 import { DateHelper } from "../helpers/DateHelper.js"
 
 
@@ -14,17 +16,28 @@ export class NegociacaoController {
         this._inputQuantidade = document.querySelector('#quantidade');
         this._inputValor = document.querySelector('#valor');
         this._listaNegociacoes = new ListaNegociacoes();
+        this._negociacoesView = new NegociacoesView(document.querySelector('#negociacoesView'));
+        this._alertaView = new AlertaView(document.querySelector('#alertaView'));
+
+        this._negociacoesView.update(this._listaNegociacoes); //Ao instanciar a classe no index.js ele já exibe o estado do model na tela do usuário.
+
+        this.limparFormulario(); //Ao instanciar a classe no index.js ele já exibe o formulario nas condições iniciais.
     }
 
 
     adicionarNegociacao(event) {
         event.preventDefault();
-        alert('Negociação cadastrada');
+
+        if(DateHelper.ehDataFutura(DateHelper.textoParaData(this._inputData.value))) {
+            this._alertaView.perigo('A data da negociação não pode ser futura!');
+            this.limparFormulario();
+            throw new Error('A data da negociação não pode ser futura!');
+        } //Retorna erro se a data é futura.
         
         this._listaNegociacoes.adicionar(this._criarNegociacao());
+        this._negociacoesView.update(this._listaNegociacoes);
+        this._alertaView.sucesso('Negociação cadastrada com sucesso!');
         this.limparFormulario();
-
-          
     }
 
     _criarNegociacao() {

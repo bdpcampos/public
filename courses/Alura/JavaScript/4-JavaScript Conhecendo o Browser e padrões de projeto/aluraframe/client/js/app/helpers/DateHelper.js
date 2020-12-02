@@ -20,12 +20,18 @@ export class DateHelper {
     }
 
     static dataParaTexto(data) {
-        return `${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`;
+        return `${("0"+data.getDate()).slice(-2)}/${("0"+(data.getMonth()+1)).slice(-2)}/${data.getFullYear()}`;  //Adiciona o 0 na frente para não retornar mes e/ou dia com 1 digito. Se houverem tres dígitos o slice(-2) pega apenas os últimos 2
     }
 
     static dataHojeParaCampo() {
         const dataHoje = new Date;
         
-        return `${dataHoje.getFullYear()}-${dataHoje.getMonth()+1}-${dataHoje.getDate()}`;
+        return `${dataHoje.getFullYear()}-${("0"+(dataHoje.getMonth()+1)).slice(-2)}-${("0"+dataHoje.getDate()).slice(-2)}`;   //Adiciona o 0 na frente para não retornar mes e/ou dia com 1 digito. Se houverem tres dígitos o slice(-2) pega apenas os últimos 2
+    }
+
+    static ehDataFutura(data) {
+        const dataHoje = new Date;
+
+        return data > dataHoje;
     }
 }

@@ -1,15 +1,11 @@
 /*  Import declaration  */
 
-import { NegociacaoController } from "../controllers/NegociacaoController.js"
-import { DateHelper } from "../helpers/DateHelper.js"
+import { NegociacaoController } from "./app/controllers/NegociacaoController.js"
 
 
 /*  Variable declaration  */
 
 const formulario = document.querySelector(".form");
-const campoData = document.querySelector("#data");
-const campoQuantidade = document.querySelector("#quantidade");
-const campoValor = document.querySelector("#valor");
 
 
 /*  Object instantiation  */
@@ -24,4 +20,3 @@ formulario.addEventListener("submit", evento => negociacaoController.adicionarNe
 
 /*  Procedural code  */
 
-negociacaoController.limparFormulario();
