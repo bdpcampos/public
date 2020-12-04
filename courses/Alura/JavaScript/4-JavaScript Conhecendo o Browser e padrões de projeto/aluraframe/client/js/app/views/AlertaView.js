@@ -10,41 +10,14 @@ export class AlertaView {
     }
 
 
-    _template(texto) {
-        return `<p>${texto}</p>`;
+    _template(modelo, classe) {
+        return `<p class="${classe}">${modelo.texto}</p>`;
     }
 
-    sucesso(texto) {
-        this._elemento.classList.add('alert-success');
-        this._update(texto);
 
+    update(modelo, classe) {
+        this._elemento.innerHTML += this._template(modelo, classe);
         this._clearAlert();
-    }
-
-    informacao(texto) {
-        this._elemento.classList.add('alert-info');
-        this._update(texto);
-
-        this._clearAlert();
-    }
-
-    cuidado(texto) {
-        this._elemento.classList.add('alert-warning');
-        this._update(texto);
-
-        this._clearAlert();
-    }
-
-    perigo(texto) {
-        this._elemento.classList.add('alert-danger');
-        this._update(texto);
-
-        this._clearAlert();
-    }
-
-
-    _update(texto) {
-        this._elemento.innerHTML = this._template(texto);
     }
 
     _clearAlert() {
@@ -52,8 +25,7 @@ export class AlertaView {
     }
 
     _clearParameters() {
-        this._update("");
-        this._elemento.classList.remove('alert-success', 'alert-info', 'alert-warning', 'alert-danger');
-    }   
+        this._elemento.removeChild(this._elemento.childNodes[0]);
+    }  
 }
 
