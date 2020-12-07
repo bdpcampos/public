@@ -5,6 +5,7 @@ import { ListaNegociacoes } from "../models/ListaNegociacoes.js"
 import { NegociacoesView } from "../views/NegociacoesView.js"
 import { AlertaController } from "../controllers/AlertaController.js"
 import { DateHelper } from "../helpers/DateHelper.js"
+import { Bind } from "../helpers/Bind.js"
 
 
 /*  Class declaration  */
@@ -16,11 +17,12 @@ export class NegociacaoController {
         this._inputQuantidade = document.querySelector('#quantidade');
         this._inputValor = document.querySelector('#valor');
 
-        this._listaNegociacoes = new ListaNegociacoes();
-        this._negociacoesView = new NegociacoesView(document.querySelector('#negociacoesView'));
-        this._alerta = new AlertaController();
+        this._listaNegociacoes = new Bind(
+            new ListaNegociacoes(), 
+            new NegociacoesView(document.querySelector('#negociacoesView')), 
+            'adicionar', 'esvaziar');
 
-        this._negociacoesView.update(this._listaNegociacoes); //Ao instanciar a classe no index.js ele já exibe o estado do model na tela do usuário.
+        this._alerta = new AlertaController();
 
         this.limparFormulario(); //Ao instanciar a classe no index.js ele já exibe o formulario nas condições iniciais.
     }
@@ -30,18 +32,23 @@ export class NegociacaoController {
         event.preventDefault();
 
         //Retorna erro se a data é futura.
-        if(DateHelper.ehDataFutura(DateHelper.textoParaData(this._inputData.value))) {
+        if (DateHelper.ehDataFutura(DateHelper.textoParaData(this._inputData.value))) {
             const mensagem = 'A data da negociação não pode ser futura!';
             this._alerta.perigo(mensagem);
             this.limparFormulario();
             throw new Error(mensagem);
-        } 
+        }
 
         this._listaNegociacoes.adicionar(this._criarNegociacao());
-        this._negociacoesView.update(this._listaNegociacoes);
         this._alerta.sucesso('Negociação cadastrada com sucesso!');
         this.limparFormulario();
     }
+
+    apagarNegociacoes(event) {
+        this._listaNegociacoes.esvaziar();
+        this._alerta.informacao('Negociações apagadas com sucesso!');
+    }
+
 
     _criarNegociacao() {
         return new Negociacao(

@@ -18,7 +18,8 @@ export class ListaNegociacoes {
     adicionar(negociacao) {
         this._negociacoes.push(negociacao);
     }
-
-
-
+    
+    esvaziar() {
+        this._negociacoes = [];
+    }
 }

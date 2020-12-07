@@ -1,16 +1,12 @@
 /*  Import declaration  */
 
+import { View } from "../views/View.js"
 import { DateHelper } from "../helpers/DateHelper.js"
 
 
 /*  Class declaration  */
 
-export class NegociacoesView {
-
-    constructor(elementoDoDOM) {
-        this._elemento = elementoDoDOM;
-    }
-
+export class NegociacoesView extends View {
 
     _template(modelo) {
         return `
@@ -45,10 +41,5 @@ export class NegociacoesView {
         </table>
         `;
     }
-
-    update(modelo) {
-        this._elemento.innerHTML = this._template(modelo);
-    }
-
 }
 
