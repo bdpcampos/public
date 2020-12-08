@@ -4,6 +4,7 @@ import { Negociacao } from "../models/Negociacao.js"
 import { ListaNegociacoes } from "../models/ListaNegociacoes.js"
 import { NegociacoesView } from "../views/NegociacoesView.js"
 import { AlertaController } from "../controllers/AlertaController.js"
+import { NegociacaoService } from "../services/NegociacaoService.js"
 import { DateHelper } from "../helpers/DateHelper.js"
 import { Bind } from "../helpers/Bind.js"
 
@@ -34,7 +35,7 @@ export class NegociacaoController {
         //Retorna erro se a data é futura.
         if (DateHelper.ehDataFutura(DateHelper.textoParaData(this._inputData.value))) {
             const mensagem = 'A data da negociação não pode ser futura!';
-            this._alerta.perigo(mensagem);
+            this._alerta.cuidado(mensagem);
             this.limparFormulario();
             throw new Error(mensagem);
         }
@@ -42,6 +43,24 @@ export class NegociacaoController {
         this._listaNegociacoes.adicionar(this._criarNegociacao());
         this._alerta.sucesso('Negociação cadastrada com sucesso!');
         this.limparFormulario();
+    }
+
+    importarNegociacoes(event) {
+        NegociacaoService.obterNegociacoesDaSemana((error, negociacoes) =>{
+            if(error) {
+                this._alerta.perigo(error);
+                return;
+            }
+
+            negociacoes.forEach(negociacao => this._listaNegociacoes.adicionar(negociacao));
+            this._alerta.sucesso('Negociações importadas com sucesso!');
+        });
+    }
+
+    exportarNegociacoes(event) {
+        event.preventDefault();
+
+        NegociacaoService.enviarNegociacao(this._criarNegociacao());
     }
 
     apagarNegociacoes(event) {
