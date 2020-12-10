@@ -19,9 +19,11 @@ export class NegociacaoController {
         this._inputValor = document.querySelector('#valor');
 
         this._listaNegociacoes = new Bind(
-            new ListaNegociacoes(), 
-            new NegociacoesView(document.querySelector('#negociacoesView')), 
+            new ListaNegociacoes(),
+            new NegociacoesView(document.querySelector('#negociacoesView')),
             'adicionar', 'esvaziar');
+
+        this._negociacaoService = new NegociacaoService();
 
         this._alerta = new AlertaController();
 
@@ -45,25 +47,36 @@ export class NegociacaoController {
         this.limparFormulario();
     }
 
-    importarNegociacoes(event) {
-        NegociacaoService.obterNegociacoesDaSemana((error, negociacoes) =>{
-            if(error) {
-                this._alerta.perigo(error);
-                return;
-            }
+    importarNegociacoes() {
 
-            negociacoes.forEach(negociacao => this._listaNegociacoes.adicionar(negociacao));
+        Promise.all([
+            this._negociacaoService.obterNegociacoesDaSemana(),
+            this._negociacaoService.obterNegociacoesDaSemanaAnterior(),
+            this._negociacaoService.obterNegociacoesDaSemanaRetrasada()
+
+        ]).then(negociacoes => {
+            negociacoes
+            .reduce((arrayUnico, array) => arrayUnico.concat(array),[]) //Faz os 3 arrays retornados, cada um de uma promise, virar um único array para ser iterado por foreach
+            .forEach(negociacao => this._listaNegociacoes.adicionar(negociacao));
             this._alerta.sucesso('Negociações importadas com sucesso!');
+
+        }).catch(error => {
+            this._alerta.perigo(error);
         });
     }
 
     exportarNegociacoes(event) {
         event.preventDefault();
 
-        NegociacaoService.enviarNegociacao(this._criarNegociacao());
+        this._negociacaoService.enviarNegociacao(this._criarNegociacao())
+        .then(mensagem => {
+            this._alerta.sucesso(mensagem);
+            this.limparFormulario();
+        })
+        .catch(error => this._alerta.perigo(error))
     }
 
-    apagarNegociacoes(event) {
+    apagarNegociacoes() {
         this._listaNegociacoes.esvaziar();
         this._alerta.informacao('Negociações apagadas com sucesso!');
     }
