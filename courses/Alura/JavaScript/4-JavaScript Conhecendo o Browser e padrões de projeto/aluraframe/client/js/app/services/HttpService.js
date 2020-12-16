@@ -17,7 +17,6 @@ export class HttpService {
                     if (xhr.status === 200) {
                         resolve(JSON.parse(xhr.responseText));
                     } else {
-                        console.log(xhr.responseText);
                         reject(xhr.responseText);
                     }
                 }
@@ -38,9 +37,8 @@ export class HttpService {
 
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
-                        resolve(xhr.responseText);
+                        resolve(JSON.parse(xhr.responseText));
                     } else {
-                        console.log(xhr.responseText);
                         reject(xhr.responseText);
                     }
                 }

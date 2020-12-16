@@ -21,13 +21,15 @@ export class NegociacaoController {
         this._listaNegociacoes = new Bind(
             new ListaNegociacoes(),
             new NegociacoesView(document.querySelector('#negociacoesView')),
-            'adicionar', 'esvaziar');
+            'adicionar', 'esvaziar', 'ordenar', 'inverterOrdem');
 
         this._negociacaoService = new NegociacaoService();
 
         this._alerta = new AlertaController();
 
         this.limparFormulario(); //Ao instanciar a classe no index.js ele já exibe o formulario nas condições iniciais.
+
+        this._ordemAtual = ''; // quando a página for carregada, não tem critério. Só passa a ter quando ele começa a clicar nas colunas
     }
 
 
@@ -95,5 +97,15 @@ export class NegociacaoController {
         this._inputQuantidade.value = 1;
         this._inputValor.value = 0.0;
         this._inputData.focus();
+    }
+
+    ordenarListaNegociacoes(coluna) {
+        if(this._ordemAtual === coluna) {
+            this._listaNegociacoes.inverterOrdem();
+        } else {
+            this._listaNegociacoes.ordenar((a,b) => a[coluna] - b[coluna]);
+        }
+
+        this._ordemAtual = coluna;
     }
 }
